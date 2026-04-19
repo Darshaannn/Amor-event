@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Spaces | Amor Eventz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?css=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar scrolled"> <!-- Always solid on inner pages -->
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-text">AMOR EVENTZ</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="venues.html" class="active">VENUES</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+            <a href="reserve.html" class="btn btn-primary">RESERVE NOW</a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="page-header-container">
+            <div class="header-left">
+                <p class="subtitle">THE COLLECTION</p>
+                <h1 class="page-title">Our Spaces</h1>
+            </div>
+            <div class="header-right">
+                <a href="#all-venues" class="btn btn-outline border-all">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        style="margin-right: 8px; vertical-align: middle;">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    3 EXCLUSIVE VENUES
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="filter-bar">
+        <ul class="filter-menu">
+            <li><a href="#" class="active">ALL</a></li>
+            <li><a href="#">WEDDINGS</a></li>
+            <li><a href="#">CORPORATE</a></li>
+            <li><a href="#">SOCIAL</a></li>
+        </ul>
+        <div class="filter-divider"></div>
+    </div>
+
+    <!-- Venues List -->
+    <section class="venue-list">
+        <!-- Venue 1: Grand Ballroom -->
+        <article class="venue-row">
+            <div class="venue-info reveal">
+                <h2 class="venue-title">The Grand Ballroom</h2>
+                <p class="venue-desc">A majestic space defined by crystal chandeliers and soaring ceilings. Perfect for
+                    opulent receptions and grand galas, offering unparalleled elegance and acoustic perfection.</p>
+                <div class="venue-stats">
+                    <div class="v-stat">
+                        <span class="v-stat-label">CAPACITY</span>
+                        <span class="v-stat-val">500 Guests</span>
+                    </div>
+                    <div class="v-stat">
+                        <span class="v-stat-label">AREA</span>
+                        <span class="v-stat-val">8,500 sq ft</span>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-outline">ENQUIRE SPACE &rarr;</a>
+            </div>
+            <div class="venue-image reveal delay-1">
+                <!-- User provided image goes here -->
+                <div class="image-placeholder"><img src="assets/grand-ballroom-placeholder.jpg"
+                        alt="The Grand Ballroom"></div>
+            </div>
+        </article>
+
+        <!-- Venue 2: Peacock Terrace -->
+        <article class="venue-row reverse">
+            <div class="venue-image reveal">
+                <!-- User provided image goes here -->
+                <div class="image-placeholder"><img src="assets/peacock-terrace-placeholder.jpg" alt="Peacock Terrace">
+                </div>
+            </div>
+            <div class="venue-info reveal delay-1">
+                <h2 class="venue-title">Peacock Terrace</h2>
+                <p class="venue-desc">An enchanting open-air enclave surrounded by manicured topiary. The ideal setting
+                    for sunset cocktails or intimate ceremonies beneath a canopy of stars.</p>
+                <div class="venue-stats">
+                    <div class="v-stat">
+                        <span class="v-stat-label">CAPACITY</span>
+                        <span class="v-stat-val">200 Guests</span>
+                    </div>
+                    <div class="v-stat">
+                        <span class="v-stat-label">AREA</span>
+                        <span class="v-stat-val">4,200 sq ft</span>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-outline">ENQUIRE SPACE &rarr;</a>
+            </div>
+        </article>
+    </section>
+
+    <!-- Virtual Tour Section -->
+    <section class="virtual-tour reveal">
+        <!-- User provided background image goes here via CSS or img tag -->
+        <div class="tour-bg-placeholder" style="background-image: url('assets/virtual-tour-bg-placeholder.jpg');"></div>
+        <div class="tour-overlay"></div>
+        <div class="tour-box">
+            <p class="subtitle">IMMERSIVE EXPERIENCE</p>
+            <h2 class="tour-title">Take a Virtual Tour</h2>
+            <button class="play-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="play-icon">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo-text">AMOR EVENTZ</a>
+                <p>Where Every Celebration Becomes a Legend.</p>
+            </div>
+            <div class="footer-links">
+                <h4>EXPLORE</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Venue Map</a></li>
+                    <li><a href="#">Press Kit</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>CONNECT</h4>
+                <div class="social-icons">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="18" cy="5" r="3"></circle>
+                        <circle cx="6" cy="12" r="3"></circle>
+                        <circle cx="18" cy="19" r="3"></circle>
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                    </svg>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h4>NEWSLETTER</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email Address">
+                    <button type="submit">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Amor Eventz. Crafted for Royalty.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

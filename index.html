@@ -1,0 +1,644 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amor Eventz | Where Every Celebration Becomes a Legend</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ===== HERO SECTION OVERRIDES ===== */
+        .hero {
+            height: 100vh !important;
+            display: flex !important;
+            align-items: flex-end !important;
+            justify-content: flex-start !important;
+            position: relative !important;
+            overflow: hidden !important;
+            background: none !important;
+            background-color: #050005 !important;
+        }
+
+        .hero-slider {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 0 !important;
+            overflow: hidden !important;
+        }
+
+        .hero-slide {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            opacity: 0 !important;
+            transform: scale(1.0) !important;
+            transition: opacity 2.5s ease-in-out, transform 10s ease-out !important;
+            z-index: 0 !important;
+        }
+
+        .hero-slide.active {
+            opacity: 1 !important;
+            transform: scale(1.06) !important;
+            z-index: 1 !important;
+        }
+
+        .hero-slide.previous {
+            opacity: 1 !important;
+            z-index: 0 !important;
+        }
+
+        .hero-overlay {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 2 !important;
+            background:
+                linear-gradient(to right, rgba(5, 0, 10, 0.82) 0%, rgba(5, 0, 10, 0.40) 50%, rgba(5, 0, 10, 0.10) 100%),
+                linear-gradient(to top, rgba(5, 0, 10, 0.95) 0%, rgba(5, 0, 10, 0.40) 45%, transparent 100%) !important;
+        }
+
+        .hero-content {
+            position: absolute !important;
+            bottom: 130px !important;
+            left: 100px !important;
+            z-index: 3 !important;
+            text-align: left !important;
+            max-width: 680px !important;
+        }
+
+        .hero .subtitle {
+            margin-bottom: 16px !important;
+            opacity: 0.85 !important;
+            text-align: left !important;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif !important;
+            font-size: 80px !important;
+            font-style: italic !important;
+            font-weight: 700 !important;
+            color: #FAF3EC !important;
+            line-height: 1.0 !important;
+            margin-bottom: 24px !important;
+            text-shadow: 0 2px 32px rgba(0, 0, 0, 0.6) !important;
+        }
+
+        .hero-desc {
+            font-family: 'EB Garamond', serif !important;
+            font-size: 17px !important;
+            color: rgba(250, 243, 236, 0.78) !important;
+            line-height: 1.65 !important;
+            max-width: 450px !important;
+        }
+
+        .hero-thumbnails {
+            position: absolute !important;
+            bottom: 44px !important;
+            left: 100px !important;
+            z-index: 4 !important;
+            display: flex !important;
+            gap: 12px !important;
+        }
+
+        .hero-thumb {
+            width: 88px !important;
+            height: 60px !important;
+            background-size: cover !important;
+            background-position: center !important;
+            cursor: pointer !important;
+            border: 2px solid transparent !important;
+            border-radius: 3px !important;
+            opacity: 0.45 !important;
+            transition: opacity 0.4s ease, border-color 0.4s ease, transform 0.3s ease !important;
+            flex-shrink: 0 !important;
+        }
+
+        .hero-thumb:hover {
+            opacity: 0.85 !important;
+            transform: translateY(-3px) !important;
+        }
+
+        .hero-thumb.active {
+            opacity: 1 !important;
+            border-color: #D4AF6A !important;
+            transform: translateY(-4px) !important;
+        }
+
+        @media (max-width: 900px) {
+            .hero-content {
+                padding: 0 32px 170px 32px !important;
+            }
+
+            .hero-title {
+                font-size: 50px !important;
+            }
+
+            .hero-thumbnails {
+                left: 32px !important;
+            }
+
+            .hero-thumb {
+                width: 60px !important;
+                height: 42px !important;
+            }
+        }
+
+        /* ===== TAJ-STYLE FEATURE SECTION ===== */
+        .taj-feature {
+            background: #1a0410;
+            padding: 100px 80px 80px;
+        }
+
+        .taj-centered-heading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            margin-bottom: 28px;
+        }
+
+        .taj-centered-heading h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: 600;
+            color: #FAF3EC;
+            text-align: center;
+            line-height: 1.25;
+            letter-spacing: 2px;
+        }
+
+        .taj-dash {
+            display: block;
+            width: 48px;
+            height: 1px;
+            background: #D4AF6A;
+            flex-shrink: 0;
+        }
+
+        .taj-centered-desc {
+            font-family: 'EB Garamond', serif;
+            font-size: 17px;
+            color: rgba(250, 243, 236, 0.72);
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 56px;
+            line-height: 1.75;
+        }
+
+        .taj-split-row {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 72px;
+            align-items: center;
+        }
+
+        .taj-split-img img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .taj-split-text {
+            padding-right: 20px;
+        }
+
+        .taj-split-eyebrow {
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            color: #D4AF6A;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .taj-split-title {
+            font-family: 'Cinzel', serif;
+            font-size: 34px;
+            font-weight: 600;
+            color: #FAF3EC;
+            line-height: 1.2;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .taj-split-body {
+            font-family: 'EB Garamond', serif;
+            font-size: 17px;
+            color: rgba(250, 243, 236, 0.72);
+            line-height: 1.75;
+            margin-bottom: 36px;
+        }
+
+        .taj-cta-btn {
+            display: inline-block;
+            padding: 14px 40px;
+            background: transparent;
+            border: 1px solid #D4AF6A;
+            color: #D4AF6A;
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+        }
+
+        .taj-cta-btn:hover {
+            background: #D4AF6A;
+            color: #1a0410;
+        }
+
+        /* ===== TAJ-STYLE COMMITMENT SECTION ===== */
+        .taj-commitment {
+            background: #130309;
+            padding: 80px 80px 100px;
+        }
+
+        .taj-commitment-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 80px;
+            margin-bottom: 56px;
+        }
+
+        .taj-commit-title-row {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-shrink: 0;
+        }
+
+        .taj-dash-short {
+            display: block;
+            width: 36px;
+            height: 1px;
+            background: #D4AF6A;
+        }
+
+        .taj-commit-heading {
+            font-family: 'Cinzel', serif;
+            font-size: 26px;
+            font-weight: 600;
+            color: #FAF3EC;
+            letter-spacing: 3px;
+            white-space: nowrap;
+        }
+
+        .taj-commit-desc {
+            font-family: 'EB Garamond', serif;
+            font-size: 17px;
+            color: rgba(250, 243, 236, 0.72);
+            line-height: 1.75;
+            max-width: 420px;
+        }
+
+        .taj-commit-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 36px;
+        }
+
+        .taj-commit-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .taj-commit-img-wrap {
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            margin-bottom: 18px;
+        }
+
+        .taj-commit-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .taj-commit-card:hover .taj-commit-img-wrap img {
+            transform: scale(1.04);
+        }
+
+        .taj-commit-label {
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #D4AF6A;
+            margin-bottom: 8px;
+        }
+
+        .taj-commit-sub {
+            font-family: 'EB Garamond', serif;
+            font-size: 15px;
+            color: rgba(250, 243, 236, 0.72);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1024px) {
+
+            .taj-feature,
+            .taj-commitment {
+                padding: 60px 40px;
+            }
+
+            .taj-split-row {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .taj-split-img img {
+                height: 340px;
+            }
+
+            .taj-commitment-header {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .taj-commit-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .taj-commit-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .taj-centered-heading h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">AMOR EVENTZ</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="venues.html">VENUES</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+            <a href="pricing.html" class="btn btn-primary">RESERVE NOW</a>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <!-- Fullscreen background slides -->
+        <div class="hero-slider" id="heroSlider">
+            <div class="hero-slide active" style="background-image: url('assets/hero (1).jpg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/hero (2).jpg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/hero (3).jpg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/hero (4).jpg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/hero (5).jpg');"></div>
+        </div>
+
+        <!-- Directional gradient overlay -->
+        <div class="hero-overlay"></div>
+
+        <!-- Left-aligned text block -->
+        <div class="hero-content">
+            <h1 class="hero-title">Where Every<br>Celebration<br>Becomes a Legend.</h1>
+            <p class="hero-desc">We craft sovereign events tailored to your vision — blending timeless heritage with
+                modern luxury to create celebrations that resonate for a lifetime.</p>
+            <a href="#venues" class="btn btn-outline" style="margin-top:32px;display:inline-block;">EXPLORE OUR
+                VENUES</a>
+        </div>
+
+        <!-- Clickable thumbnail strip -->
+        <div class="hero-thumbnails" id="heroThumbs">
+            <div class="hero-thumb active" data-index="0" style="background-image: url('assets/hero (1).jpg');"></div>
+            <div class="hero-thumb" data-index="1" style="background-image: url('assets/hero (2).jpg');"></div>
+            <div class="hero-thumb" data-index="2" style="background-image: url('assets/hero (3).jpg');"></div>
+            <div class="hero-thumb" data-index="3" style="background-image: url('assets/hero (4).jpg');"></div>
+            <div class="hero-thumb" data-index="4" style="background-image: url('assets/hero (5).jpg');"></div>
+        </div>
+    </header>
+
+    <section class="marquee-section">
+        <div class="marquee">
+            <div class="marquee-inner">
+                <span>+ WEDDINGS + RECEPTIONS + CORPORATE GALAS + PRIVATE SOIRÉES + GRAND ANNIVERSARIES</span>
+                <span>+ WEDDINGS + RECEPTIONS + CORPORATE GALAS + PRIVATE SOIRÉES + GRAND ANNIVERSARIES</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-images">
+                <img src="assets/about_empty_hall.png" alt="Grand Hall" class="img-back reveal">
+                <img src="assets/about_heritage_hallway.png" alt="Heritage Hallway" class="img-front reveal delay-1">
+            </div>
+            <div class="about-content reveal">
+                <h2 class="section-title">"Crafting unforgettable moments in spaces designed for royalty."</h2>
+                <p>At Amor Eventz, we believe that your special day deserves a setting as magnificent as your story. Our
+                    curated selection of opulent venues combines timeless heritage with modern luxury, providing the
+                    perfect canvas for your most cherished celebrations.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="500">0</span>+
+                        <span class="stat-label">EVENTS HOSTED</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="3">0</span>
+                        <span class="stat-label">GRAND VENUES</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="15">0</span>
+                        <span class="stat-label">YEARS LEGACY</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- SECTION 1 — FEATURE SPLIT: image left + text+CTA right  -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section class="taj-feature reveal">
+        <!-- Section heading -->
+        <div class="taj-centered-heading">
+            <span class="taj-dash"></span>
+            <h2>GRAND &amp; EXCEPTIONAL<br>CELEBRATIONS</h2>
+            <span class="taj-dash"></span>
+        </div>
+        <p class="taj-centered-desc">
+            Step into a realm of remarkable possibilities and explore a curated selection of opulent banquet halls and
+            event venues.
+            From intimate soirées to grand royal galas, discover spaces that offer a harmony of heritage and modern
+            luxury.
+        </p>
+
+        <!-- Split row -->
+        <div class="taj-split-row">
+            <div class="taj-split-img">
+                <img src="assets/venue_grand_ballroom.png" alt="Grand Ballroom at Amor Eventz">
+            </div>
+            <div class="taj-split-text">
+                <p class="taj-split-eyebrow">— PLAN YOUR</p>
+                <h3 class="taj-split-title">CELEBRATION<br>WITH US</h3>
+                <p class="taj-split-body">Discover a seamless blend of elegance, personalisation, and unmatched
+                    hospitality. Our event curators will craft every detail of your dream occasion.</p>
+                <a href="contact.html" class="taj-cta-btn">ENQUIRE NOW</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- SECTION 2 — OUR COMMITMENT: 3-column image card strip   -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section class="taj-commitment reveal">
+        <div class="taj-commitment-header">
+            <div class="taj-commit-title-row">
+                <span class="taj-dash-short"></span>
+                <h2 class="taj-commit-heading">OUR COMMITMENT</h2>
+            </div>
+            <p class="taj-commit-desc">At Amor Eventz, our commitment to innovation and personalised elegance is
+                unwavering. As our experts craft your celebrations, every detail becomes a masterpiece.</p>
+        </div>
+
+        <div class="taj-commit-grid">
+            <div class="taj-commit-card">
+                <div class="taj-commit-img-wrap">
+                    <img src="assets/venue_grand_ballroom.png" alt="Choice of Venues">
+                </div>
+                <p class="taj-commit-label">— CHOICE OF VENUES &amp; CAPACITIES</p>
+                <p class="taj-commit-sub">From intimate rooms to grand ballrooms seating 500+</p>
+            </div>
+            <div class="taj-commit-card">
+                <div class="taj-commit-img-wrap">
+                    <img src="assets/about_empty_hall.png" alt="Personalised Curation">
+                </div>
+                <p class="taj-commit-label">— PERSONALISED EVENT CURATION</p>
+                <p class="taj-commit-sub">Bespoke planning tailored to your exact vision and story</p>
+            </div>
+            <div class="taj-commit-card">
+                <div class="taj-commit-img-wrap">
+                    <img src="assets/venue_peacock_lounge.png" alt="Dining Experiences">
+                </div>
+                <p class="taj-commit-label">— DIVERSE DINING EXPERIENCES</p>
+                <p class="taj-commit-sub">Curated gourmet menus and live culinary theatrics</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="venues" class="venues">
+
+        <div class="section-header reveal">
+            <p class="subtitle">OUR SPACES</p>
+            <h2 class="section-title text-center">Discover the Venues</h2>
+            <div class="divider-center"></div>
+        </div>
+        <div class="venues-grid">
+            <div class="venue-card reveal">
+                <div class="card-image-wrapper">
+                    <img src="assets/venue_grand_ballroom.png" alt="Grand Ballroom">
+                </div>
+                <div class="card-content">
+                    <h3>Grand Ballroom</h3>
+                    <p>CAPACITY: 500 GUESTS</p>
+                </div>
+            </div>
+            <div class="venue-card reveal delay-1">
+                <div class="card-image-wrapper">
+                    <img src="assets/venue_peacock_lounge.png" alt="Peacock Terrace">
+                </div>
+                <div class="card-content">
+                    <h3>Peacock Terrace</h3>
+                    <p>CAPACITY: 200 GUESTS</p>
+                </div>
+            </div>
+            <div class="venue-card reveal delay-2">
+                <div class="card-image-wrapper">
+                    <img src="assets/venue_ivory_lounge.png" alt="Ivory Lounge">
+                </div>
+                <div class="card-content">
+                    <h3>Ivory Lounge</h3>
+                    <p>CAPACITY: 100 GUESTS</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center reveal">
+            <a href="#venues" class="btn btn-outline">VIEW ALL VENUES</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="logo-text">AMOR EVENTZ</h2>
+                <p>Where Every Celebration Becomes a Legend.</p>
+            </div>
+            <div class="footer-links">
+                <h4>EXPLORE</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Venue Map</a></li>
+                    <li><a href="#">Press Kit</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>CONNECT</h4>
+                <div class="social-icons">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="18" cy="5" r="3"></circle>
+                        <circle cx="6" cy="12" r="3"></circle>
+                        <circle cx="18" cy="19" r="3"></circle>
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                    </svg>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h4>NEWSLETTER</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email Address">
+                    <button type="submit">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Amor Eventz. Crafted for Royalty.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
