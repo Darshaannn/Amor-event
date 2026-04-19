@@ -1,412 +1,64 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amor Eventz | Where Every Celebration Becomes a Legend</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap"
-        rel="stylesheet">
+    
+    <!-- Fonts Overhaul -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600&family=Cinzel:wght@400;500&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Amor Eventz — Premium banquet hall and wedding venue. Elegant spaces for weddings, receptions, corporate events and private celebrations. Enquire now.">
+    <meta name="keywords" content="banquet hall, wedding venue, event space, reception hall, Amor Eventz">
+    <meta property="og:title" content="Amor Eventz | Where Every Celebration Becomes a Legend">
+    <meta property="og:description" content="Premium banquet halls and event spaces for weddings, receptions, corporate galas and private celebrations.">
+    <meta property="og:image" content="https://amor-event-blue.vercel.app/assets/amor-eventz-logo.png">
+    <meta property="og:url" content="https://amor-event-blue.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="stylesheet" href="styles.css">
+    
     <style>
-        /* ===== HERO SECTION OVERRIDES ===== */
-        .hero {
-            height: 100vh !important;
-            display: flex !important;
-            align-items: flex-end !important;
-            justify-content: flex-start !important;
-            position: relative !important;
-            overflow: hidden !important;
-            background: none !important;
-            background-color: #050005 !important;
-        }
-
-        .hero-slider {
-            position: absolute !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100% !important;
-            height: 100% !important;
-            z-index: 0 !important;
-            overflow: hidden !important;
-        }
-
-        .hero-slide {
-            position: absolute !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100% !important;
-            height: 100% !important;
-            background-size: cover !important;
-            background-position: center center !important;
-            opacity: 0 !important;
-            transform: scale(1.0) !important;
-            transition: opacity 2.5s ease-in-out, transform 10s ease-out !important;
-            z-index: 0 !important;
-        }
-
-        .hero-slide.active {
-            opacity: 1 !important;
-            transform: scale(1.06) !important;
-            z-index: 1 !important;
-        }
-
-        .hero-slide.previous {
-            opacity: 1 !important;
-            z-index: 0 !important;
-        }
-
-        .hero-overlay {
-            position: absolute !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100% !important;
-            height: 100% !important;
-            z-index: 2 !important;
-            background:
-                linear-gradient(to right, rgba(5, 0, 10, 0.82) 0%, rgba(5, 0, 10, 0.40) 50%, rgba(5, 0, 10, 0.10) 100%),
-                linear-gradient(to top, rgba(5, 0, 10, 0.95) 0%, rgba(5, 0, 10, 0.40) 45%, transparent 100%) !important;
-        }
-
-        .hero-content {
-            position: absolute !important;
-            bottom: 130px !important;
-            left: 100px !important;
-            z-index: 3 !important;
-            text-align: left !important;
-            max-width: 680px !important;
-        }
-
-        .hero .subtitle {
-            margin-bottom: 16px !important;
-            opacity: 0.85 !important;
-            text-align: left !important;
-        }
-
-        .hero-title {
-            font-family: 'Cormorant Garamond', serif !important;
-            font-size: 80px !important;
-            font-style: italic !important;
-            font-weight: 700 !important;
-            color: #FAF3EC !important;
-            line-height: 1.0 !important;
-            margin-bottom: 24px !important;
-            text-shadow: 0 2px 32px rgba(0, 0, 0, 0.6) !important;
-        }
-
-        .hero-desc {
-            font-family: 'EB Garamond', serif !important;
-            font-size: 17px !important;
-            color: rgba(250, 243, 236, 0.78) !important;
-            line-height: 1.65 !important;
-            max-width: 450px !important;
-        }
-
-        .hero-thumbnails {
-            position: absolute !important;
-            bottom: 44px !important;
-            left: 100px !important;
-            z-index: 4 !important;
-            display: flex !important;
-            gap: 12px !important;
-        }
-
-        .hero-thumb {
-            width: 88px !important;
-            height: 60px !important;
-            background-size: cover !important;
-            background-position: center !important;
-            cursor: pointer !important;
-            border: 2px solid transparent !important;
-            border-radius: 3px !important;
-            opacity: 0.45 !important;
-            transition: opacity 0.4s ease, border-color 0.4s ease, transform 0.3s ease !important;
-            flex-shrink: 0 !important;
-        }
-
-        .hero-thumb:hover {
-            opacity: 0.85 !important;
-            transform: translateY(-3px) !important;
-        }
-
-        .hero-thumb.active {
-            opacity: 1 !important;
-            border-color: #D4AF6A !important;
-            transform: translateY(-4px) !important;
-        }
-
-        @media (max-width: 900px) {
-            .hero-content {
-                padding: 0 32px 170px 32px !important;
-            }
-
-            .hero-title {
-                font-size: 50px !important;
-            }
-
-            .hero-thumbnails {
-                left: 32px !important;
-            }
-
-            .hero-thumb {
-                width: 60px !important;
-                height: 42px !important;
-            }
-        }
-
-        /* ===== TAJ-STYLE FEATURE SECTION ===== */
-        .taj-feature {
-            background: #1a0410;
-            padding: 100px 80px 80px;
-        }
-
-        .taj-centered-heading {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 28px;
-            margin-bottom: 28px;
-        }
-
-        .taj-centered-heading h2 {
-            font-family: 'Cinzel', serif;
-            font-size: 30px;
-            font-weight: 600;
-            color: #FAF3EC;
-            text-align: center;
-            line-height: 1.25;
-            letter-spacing: 2px;
-        }
-
-        .taj-dash {
-            display: block;
-            width: 48px;
-            height: 1px;
-            background: #D4AF6A;
-            flex-shrink: 0;
-        }
-
-        .taj-centered-desc {
-            font-family: 'EB Garamond', serif;
-            font-size: 17px;
-            color: rgba(250, 243, 236, 0.72);
-            text-align: center;
-            max-width: 640px;
-            margin: 0 auto 56px;
-            line-height: 1.75;
-        }
-
-        .taj-split-row {
-            display: grid;
-            grid-template-columns: 1.4fr 1fr;
-            gap: 72px;
-            align-items: center;
-        }
-
-        .taj-split-img img {
-            width: 100%;
-            height: 480px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .taj-split-text {
-            padding-right: 20px;
-        }
-
-        .taj-split-eyebrow {
-            font-family: 'Cinzel', serif;
-            font-size: 14px;
-            color: #D4AF6A;
-            letter-spacing: 3px;
-            margin-bottom: 12px;
-        }
-
-        .taj-split-title {
-            font-family: 'Cinzel', serif;
-            font-size: 34px;
-            font-weight: 600;
-            color: #FAF3EC;
-            line-height: 1.2;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-        }
-
-        .taj-split-body {
-            font-family: 'EB Garamond', serif;
-            font-size: 17px;
-            color: rgba(250, 243, 236, 0.72);
-            line-height: 1.75;
-            margin-bottom: 36px;
-        }
-
-        .taj-cta-btn {
-            display: inline-block;
-            padding: 14px 40px;
-            background: transparent;
-            border: 1px solid #D4AF6A;
-            color: #D4AF6A;
-            font-family: 'Cinzel', serif;
-            font-size: 11px;
-            letter-spacing: 4px;
-            text-decoration: none;
-            transition: all 0.4s ease;
-        }
-
-        .taj-cta-btn:hover {
-            background: #D4AF6A;
-            color: #1a0410;
-        }
-
-        /* ===== TAJ-STYLE COMMITMENT SECTION ===== */
-        .taj-commitment {
-            background: #130309;
-            padding: 80px 80px 100px;
-        }
-
-        .taj-commitment-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 80px;
-            margin-bottom: 56px;
-        }
-
-        .taj-commit-title-row {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            flex-shrink: 0;
-        }
-
-        .taj-dash-short {
-            display: block;
-            width: 36px;
-            height: 1px;
-            background: #D4AF6A;
-        }
-
-        .taj-commit-heading {
-            font-family: 'Cinzel', serif;
-            font-size: 26px;
-            font-weight: 600;
-            color: #FAF3EC;
-            letter-spacing: 3px;
-            white-space: nowrap;
-        }
-
-        .taj-commit-desc {
-            font-family: 'EB Garamond', serif;
-            font-size: 17px;
-            color: rgba(250, 243, 236, 0.72);
-            line-height: 1.75;
-            max-width: 420px;
-        }
-
-        .taj-commit-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 36px;
-        }
-
-        .taj-commit-card {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .taj-commit-img-wrap {
-            width: 100%;
-            aspect-ratio: 4/3;
-            overflow: hidden;
-            margin-bottom: 18px;
-        }
-
-        .taj-commit-img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s ease;
-        }
-
-        .taj-commit-card:hover .taj-commit-img-wrap img {
-            transform: scale(1.04);
-        }
-
-        .taj-commit-label {
-            font-family: 'Cinzel', serif;
-            font-size: 11px;
-            letter-spacing: 2px;
-            color: #D4AF6A;
-            margin-bottom: 8px;
-        }
-
-        .taj-commit-sub {
-            font-family: 'EB Garamond', serif;
-            font-size: 15px;
-            color: rgba(250, 243, 236, 0.72);
-            line-height: 1.6;
-        }
-
-        @media (max-width: 1024px) {
-
-            .taj-feature,
-            .taj-commitment {
-                padding: 60px 40px;
-            }
-
-            .taj-split-row {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .taj-split-img img {
-                height: 340px;
-            }
-
-            .taj-commitment-header {
-                flex-direction: column;
-                gap: 24px;
-            }
-
-            .taj-commit-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .taj-commit-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .taj-centered-heading h2 {
-                font-size: 22px;
-            }
-        }
+        /* Section-specific overrides for editorial feel */
+        .hero-btns { display: flex; gap: 16px; margin-top: 40px; }
+        .hero-title { font-size: 80px !important; margin-bottom: 20px !important; }
+        .hero-desc { font-size: 18px !important; max-width: 500px !important; }
+        
+        /* Taj-inspired Section Overrides from styles.css or local */
+        .white-section { background: var(--clr-light-section); color: var(--clr-charcoal); }
+        .white-section h2 { color: var(--clr-charcoal); }
+        .white-section p { color: #444; }
+        
+        .ornament-divider { padding: 48px 0; opacity: 0.6; }
     </style>
 </head>
-
 <body>
+
+    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <span class="logo-text">AMOR EVENTZ</span>
+                <a href="index.html">
+                    <img src="assets/amor-eventz-logo.png" alt="Amor Eventz" style="height: 50px; width: auto;">
+                </a>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="venues.html">VENUES</a></li>
                 <li><a href="services.html">SERVICES</a></li>
+                <li><a href="pricing.html">PRICING</a></li>
                 <li><a href="gallery.html">GALLERY</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
             </ul>
-            <a href="pricing.html" class="btn btn-primary">RESERVE NOW</a>
+            <a href="contact.html" class="btn btn-primary" style="font-family:'Cinzel',serif;font-size:11px;">RESERVE NOW</a>
         </div>
     </nav>
 
+    <!-- HERO SECTION -->
     <header id="home" class="hero">
-        <!-- Fullscreen background slides -->
         <div class="hero-slider" id="heroSlider">
             <div class="hero-slide active" style="background-image: url('assets/hero (1).jpg');"></div>
             <div class="hero-slide" style="background-image: url('assets/hero (2).jpg');"></div>
@@ -414,20 +66,17 @@
             <div class="hero-slide" style="background-image: url('assets/hero (4).jpg');"></div>
             <div class="hero-slide" style="background-image: url('assets/hero (5).jpg');"></div>
         </div>
-
-        <!-- Directional gradient overlay -->
         <div class="hero-overlay"></div>
 
-        <!-- Left-aligned text block -->
-        <div class="hero-content">
+        <div class="container hero-content">
             <h1 class="hero-title">Where Every<br>Celebration<br>Becomes a Legend.</h1>
-            <p class="hero-desc">We craft sovereign events tailored to your vision — blending timeless heritage with
-                modern luxury to create celebrations that resonate for a lifetime.</p>
-            <a href="#venues" class="btn btn-outline" style="margin-top:32px;display:inline-block;">EXPLORE OUR
-                VENUES</a>
+            <p class="hero-desc">We craft sovereign events tailored to your vision — blending timeless heritage with modern luxury to create celebrations that resonate for a lifetime.</p>
+            <div class="hero-btns">
+                <a href="venues.html" class="btn btn-primary">EXPLORE OUR VENUES</a>
+                <a href="contact.html" class="btn btn-outline">ENQUIRE NOW</a>
+            </div>
         </div>
 
-        <!-- Clickable thumbnail strip -->
         <div class="hero-thumbnails" id="heroThumbs">
             <div class="hero-thumb active" data-index="0" style="background-image: url('assets/hero (1).jpg');"></div>
             <div class="hero-thumb" data-index="1" style="background-image: url('assets/hero (2).jpg');"></div>
@@ -446,199 +95,293 @@
         </div>
     </section>
 
+    <!-- ORNAMENTAL DIVIDER -->
+    <div class="ornament-divider">
+        <svg width="320" height="20" viewBox="0 0 320 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block; margin:0 auto;">
+            <line x1="0" y1="10" x2="130" y2="10" stroke="#D4AF6A" stroke-width="0.5"/>
+            <polygon points="143,10 150,5 157,10 150,15" fill="#D4AF6A" opacity="0.8"/>
+            <circle cx="160" cy="10" r="3" fill="#D4AF6A"/>
+            <polygon points="163,10 170,5 177,10 170,15" fill="#D4AF6A" opacity="0.8"/>
+            <line x1="190" y1="10" x2="320" y2="10" stroke="#D4AF6A" stroke-width="0.5"/>
+        </svg>
+    </div>
+
+    <!-- ABOUT SECTION -->
     <section id="about" class="about">
-        <div class="about-container">
-            <div class="about-images">
-                <img src="assets/about_empty_hall.png" alt="Grand Hall" class="img-back reveal">
-                <img src="assets/about_heritage_hallway.png" alt="Heritage Hallway" class="img-front reveal delay-1">
+        <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;">
+            <div class="about-images" style="position:relative; height:500px;">
+                <img src="assets/about_empty_hall.png" alt="Grand Hall" style="position:absolute; width:80%; height:80%; object-fit:cover; border:1px solid rgba(212,175,106,0.2);" class="reveal">
+                <img src="assets/about_heritage_hallway.png" alt="Heritage Hallway" style="position:absolute; width:70%; height:70%; object-fit:cover; bottom:0; right:0; border:1.5px solid #D4AF6A; z-index:2;" class="reveal delay-1">
             </div>
             <div class="about-content reveal">
-                <h2 class="section-title">"Crafting unforgettable moments in spaces designed for royalty."</h2>
-                <p>At Amor Eventz, we believe that your special day deserves a setting as magnificent as your story. Our
-                    curated selection of opulent venues combines timeless heritage with modern luxury, providing the
-                    perfect canvas for your most cherished celebrations.</p>
-                <div class="stats">
+                <p style="font-family:'Cinzel',serif; font-size:12px; letter-spacing:0.2em; color:var(--clr-secondary); margin-bottom:20px;">OUR ESSENCE</p>
+                <h2 style="font-size:42px; line-height:1.2; margin-bottom:32px;">"Crafting unforgettable moments in spaces designed for royalty."</h2>
+                <p>At Amor Eventz, we believe that your special day deserves a setting as magnificent as your story. Our curated selection of opulent venues combines timeless heritage with modern luxury.</p>
+                
+                <div class="stats" style="display:flex; gap:40px; margin-top:40px;">
                     <div class="stat-item">
-                        <span class="stat-number" data-target="500">0</span>+
-                        <span class="stat-label">EVENTS HOSTED</span>
+                        <span class="stat-number counter" data-target="500" data-suffix="+" style="font-family:'Playfair Display'; font-size:32px; color:var(--clr-accent);">0+</span>
+                        <p style="font-size:11px; letter-spacing:1px; margin:0;">EVENTS HOSTED</p>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number" data-target="3">0</span>
-                        <span class="stat-label">GRAND VENUES</span>
+                        <span class="stat-number counter" data-target="3" data-suffix="" style="font-family:'Playfair Display'; font-size:32px; color:var(--clr-accent);">0</span>
+                        <p style="font-size:11px; letter-spacing:1px; margin:0;">GRAND VENUES</p>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number" data-target="15">0</span>
-                        <span class="stat-label">YEARS LEGACY</span>
+                        <span class="stat-number counter" data-target="15" data-suffix="" style="font-family:'Playfair Display'; font-size:32px; color:var(--clr-accent);">0</span>
+                        <p style="font-size:11px; letter-spacing:1px; margin:0;">YEARS LEGACY</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <!-- SECTION 1 — FEATURE SPLIT: image left + text+CTA right  -->
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <section class="taj-feature reveal">
-        <!-- Section heading -->
-        <div class="taj-centered-heading">
-            <span class="taj-dash"></span>
-            <h2>GRAND &amp; EXCEPTIONAL<br>CELEBRATIONS</h2>
-            <span class="taj-dash"></span>
-        </div>
-        <p class="taj-centered-desc">
-            Step into a realm of remarkable possibilities and explore a curated selection of opulent banquet halls and
-            event venues.
-            From intimate soirées to grand royal galas, discover spaces that offer a harmony of heritage and modern
-            luxury.
-        </p>
+    <!-- ORNAMENTAL DIVIDER -->
+    <div class="ornament-divider">
+        <svg width="320" height="20" viewBox="0 0 320 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block; margin:0 auto;">
+            <line x1="0" y1="10" x2="130" y2="10" stroke="#D4AF6A" stroke-width="0.5"/>
+            <polygon points="143,10 150,5 157,10 150,15" fill="#D4AF6A" opacity="0.8"/>
+            <circle cx="160" cy="10" r="3" fill="#D4AF6A"/>
+            <polygon points="163,10 170,5 177,10 170,15" fill="#D4AF6A" opacity="0.8"/>
+            <line x1="190" y1="10" x2="320" y2="10" stroke="#D4AF6A" stroke-width="0.5"/>
+        </svg>
+    </div>
 
-        <!-- Split row -->
-        <div class="taj-split-row">
-            <div class="taj-split-img">
-                <img src="assets/venue_grand_ballroom.png" alt="Grand Ballroom at Amor Eventz">
+    <!-- PLAN YOUR CELEBRATION (Taj Style 1) -->
+    <section class="taj-feature reveal" style="background:#1a0410; padding:100px 0;">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:60px;">
+                <div style="display:flex; align-items:center; justify-content:center; gap:20px; margin-bottom:20px;">
+                    <span style="width:40px; height:1px; background:var(--clr-secondary);"></span>
+                    <h2 style="font-family:'Cinzel'; font-size:28px; letter-spacing:3px;">GRAND & EXCEPTIONAL CELEBRATIONS</h2>
+                    <span style="width:40px; height:1px; background:var(--clr-secondary);"></span>
+                </div>
+                <p style="font-style:italic; max-width:700px; margin:0 auto; opacity:0.8;">Step into a realm of remarkable possibilities and explore a curated selection of opulent banquet halls. From intimate soirées to grand royal galas, discover spaces that offer a harmony of heritage and modern luxury.</p>
             </div>
-            <div class="taj-split-text">
-                <p class="taj-split-eyebrow">— PLAN YOUR</p>
-                <h3 class="taj-split-title">CELEBRATION<br>WITH US</h3>
-                <p class="taj-split-body">Discover a seamless blend of elegance, personalisation, and unmatched
-                    hospitality. Our event curators will craft every detail of your dream occasion.</p>
-                <a href="contact.html" class="taj-cta-btn">ENQUIRE NOW</a>
+            <div style="display:grid; grid-template-columns:1.4fr 1fr; gap:60px; align-items:center;">
+                <img src="assets/venue_grand_ballroom.png" alt="Grand Ballroom" style="width:100%; height:500px; object-fit:cover;">
+                <div>
+                    <p style="font-family:'Cinzel'; color:var(--clr-secondary); font-size:12px; letter-spacing:3px; margin-bottom:12px;">— PLAN YOUR</p>
+                    <h3 style="font-size:36px; margin-bottom:20px;">CELEBRATION<br>WITH US</h3>
+                    <p style="opacity:0.8; margin-bottom:32px;">Discover a seamless blend of elegance, personalisation, and unmatched hospitality. Our event curators will craft every detail of your dream occasion.</p>
+                    <a href="contact.html" class="btn btn-outline" style="border-radius:0;">ENQUIRE NOW</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <!-- SECTION 2 — OUR COMMITMENT: 3-column image card strip   -->
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <section class="taj-commitment reveal">
-        <div class="taj-commitment-header">
-            <div class="taj-commit-title-row">
-                <span class="taj-dash-short"></span>
-                <h2 class="taj-commit-heading">OUR COMMITMENT</h2>
+    <!-- WHY CHOOSE US SECTION -->
+    <section class="white-section reveal" style="background:#FDF6EE; padding:120px 0;">
+      <div class="container">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:100px; align-items:center;">
+          <div>
+            <p style="font-family:'Cinzel',serif; font-size:12px; letter-spacing:0.2em; color:#C9956A; margin-bottom:16px;">WHY AMOR EVENTZ</p>
+            <h2 style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:56px; color:#1A1A1A; margin-bottom:48px; line-height:1.1;">Five Reasons Families Choose Us</h2>
+            
+            <div class="usp-list">
+              <div style="display:flex; gap:24px; align-items:flex-start; margin-bottom:40px;">
+                <span style="font-family:'Cormorant Garamond'; font-size:42px; color:#C9956A; opacity:0.3; line-height:1;">01</span>
+                <div>
+                  <h3 style="font-size:18px; color:#1A1A1A; margin-bottom:8px;">Bespoke Event Planning</h3>
+                  <p style="font-size:14px; margin:0;">A dedicated event curator is assigned to you from day one — your vision, your story, your celebration.</p>
+                </div>
+              </div>
+              <div style="display:flex; gap:24px; align-items:flex-start; margin-bottom:40px;">
+                <span style="font-family:'Cormorant Garamond'; font-size:42px; color:#C9956A; opacity:0.3; line-height:1;">02</span>
+                <div>
+                  <h3 style="font-size:18px; color:#1A1A1A; margin-bottom:8px;">Culinary Excellence</h3>
+                  <p style="font-size:14px; margin:0;">In-house chefs, 200+ menu options, live counters and artisanal catering for every palate.</p>
+                </div>
+              </div>
+              <div style="display:flex; gap:24px; align-items:flex-start; margin-bottom:40px;">
+                <span style="font-family:'Cormorant Garamond'; font-size:42px; color:#C9956A; opacity:0.3; line-height:1;">03</span>
+                <div>
+                  <h3 style="font-size:18px; color:#1A1A1A; margin-bottom:8px;">500+ Events. Zero Compromises.</h3>
+                  <p style="font-size:14px; margin:0;">Over 15 years of flawless execution across weddings and grand corporate galas.</p>
+                </div>
+              </div>
+              <div style="display:flex; gap:24px; align-items:flex-start; margin-bottom:40px;">
+                <span style="font-family:'Cormorant Garamond'; font-size:42px; color:#C9956A; opacity:0.3; line-height:1;">04</span>
+                <div>
+                  <h3 style="font-size:18px; color:#1A1A1A; margin-bottom:8px;">Flexible Packages</h3>
+                  <p style="font-size:14px; margin:0;">Transparent pricing from ₹1,50,000 upwards — no hidden charges, just clarity.</p>
+                </div>
+              </div>
+              <div style="display:flex; gap:24px; align-items:flex-start;">
+                <span style="font-family:'Cormorant Garamond'; font-size:42px; color:#C9956A; opacity:0.3; line-height:1;">05</span>
+                <div>
+                  <h3 style="font-size:18px; color:#1A1A1A; margin-bottom:8px;">Premier Infrastructure</h3>
+                  <p style="font-size:14px; margin:0;">Latest AV, ambient lighting, high-speed Wi-Fi, and dedicated premium parking.</p>
+                </div>
+              </div>
             </div>
-            <p class="taj-commit-desc">At Amor Eventz, our commitment to innovation and personalised elegance is
-                unwavering. As our experts craft your celebrations, every detail becomes a masterpiece.</p>
+          </div>
+          <div style="position:relative;">
+            <img src="https://images.unsplash.com/photo-1519225421980-7e0bdbe02a72?w=800&q=80" alt="Decorated Hall" style="width:100%; height:640px; object-fit:cover;">
+            <div style="position:absolute; inset:0; border:2px solid #D4AF6A; transform:translate(20px,20px); pointer-events:none; z-index:-1;"></div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="taj-commit-grid">
-            <div class="taj-commit-card">
-                <div class="taj-commit-img-wrap">
-                    <img src="assets/venue_grand_ballroom.png" alt="Choice of Venues">
+    <!-- OUR COMMITMENT (Taj Style 2) -->
+    <section class="taj-commitment reveal" style="padding:100px 0;">
+        <div class="container">
+            <div style="display:flex; gap:100px; align-items:flex-start; margin-bottom:80px;">
+                <div style="display:flex; align-items:center; gap:20px; flex-shrink:0;">
+                    <span style="width:30px; height:1px; background:var(--clr-secondary);"></span>
+                    <h2 style="font-family:'Cinzel'; letter-spacing:4px;">OUR COMMITMENT</h2>
                 </div>
-                <p class="taj-commit-label">— CHOICE OF VENUES &amp; CAPACITIES</p>
-                <p class="taj-commit-sub">From intimate rooms to grand ballrooms seating 500+</p>
+                <p style="margin:0; opacity:0.8;">At Amor Eventz, our commitment to innovation and personalised elegance is unwavering. As our experts craft your celebrations, every detail becomes a masterpiece.</p>
             </div>
-            <div class="taj-commit-card">
-                <div class="taj-commit-img-wrap">
-                    <img src="assets/about_empty_hall.png" alt="Personalised Curation">
+            <div class="taj-commit-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:40px;">
+                <div class="taj-commit-card">
+                    <img src="assets/venue_grand_ballroom.png" alt="Venues" style="width:100%; aspect-ratio:4/3; object-fit:cover; margin-bottom:24px;">
+                    <p style="font-family:'Cinzel'; font-size:10px; color:var(--clr-secondary); letter-spacing:2px; margin-bottom:12px;">— CHOICE OF VENUES & CAPACITIES</p>
+                    <p style="font-size:15px; opacity:0.8;">From intimate rooms to grand ballrooms seating 500+</p>
                 </div>
-                <p class="taj-commit-label">— PERSONALISED EVENT CURATION</p>
-                <p class="taj-commit-sub">Bespoke planning tailored to your exact vision and story</p>
-            </div>
-            <div class="taj-commit-card">
-                <div class="taj-commit-img-wrap">
-                    <img src="assets/venue_peacock_lounge.png" alt="Dining Experiences">
+                <div class="taj-commit-card">
+                    <img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=800&q=80" alt="Curation" style="width:100%; aspect-ratio:4/3; object-fit:cover; margin-bottom:24px;">
+                    <p style="font-family:'Cinzel'; font-size:10px; color:var(--clr-secondary); letter-spacing:2px; margin-bottom:12px;">— PERSONALISED EVENT CURATION</p>
+                    <p style="font-size:15px; opacity:0.8;">Bespoke planning tailored to your exact vision and story</p>
                 </div>
-                <p class="taj-commit-label">— DIVERSE DINING EXPERIENCES</p>
-                <p class="taj-commit-sub">Curated gourmet menus and live culinary theatrics</p>
+                <div class="taj-commit-card">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80" alt="Dining" style="width:100%; aspect-ratio:4/3; object-fit:cover; margin-bottom:24px;">
+                    <p style="font-family:'Cinzel'; font-size:10px; color:var(--clr-secondary); letter-spacing:2px; margin-bottom:12px;">— DIVERSE DINING EXPERIENCES</p>
+                    <p style="font-size:15px; opacity:0.8;">Curated gourmet menus and live culinary theatrics</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="venues" class="venues">
-
-        <div class="section-header reveal">
-            <p class="subtitle">OUR SPACES</p>
-            <h2 class="section-title text-center">Discover the Venues</h2>
-            <div class="divider-center"></div>
-        </div>
-        <div class="venues-grid">
-            <div class="venue-card reveal">
-                <div class="card-image-wrapper">
-                    <img src="assets/venue_grand_ballroom.png" alt="Grand Ballroom">
+    <!-- VENUES SECTION -->
+    <section id="venues" class="venues section-padding">
+        <div class="container">
+            <div class="section-header reveal text-center" style="margin-bottom:80px;">
+                <p style="font-family:'Cinzel'; font-size:12px; letter-spacing:4px; color:var(--clr-secondary); margin-bottom:16px;">OUR SPACES</p>
+                <h2 style="font-size:48px; margin-bottom:24px;">Discover the Venues</h2>
+                <div class="divider-center"></div>
+            </div>
+            
+            <div class="venues-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:30px; margin-bottom:60px;">
+                <div class="venue-card reveal">
+                    <img src="assets/venue_grand_ballroom.png" alt="Grand Ballroom" style="width:100%; height:420px; object-fit:cover;">
+                    <div style="padding:24px 0;">
+                        <h3 style="font-size:22px; margin-bottom:8px;">Grand Ballroom</h3>
+                        <p style="font-size:12px; letter-spacing:1px; color:var(--clr-secondary);">CAPACITY: 500 GUESTS</p>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <h3>Grand Ballroom</h3>
-                    <p>CAPACITY: 500 GUESTS</p>
+                <div class="venue-card reveal delay-1">
+                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80" alt="Peacock Terrace" style="width:100%; height:420px; object-fit:cover;">
+                    <div style="padding:24px 0;">
+                        <h3 style="font-size:22px; margin-bottom:8px;">Peacock Terrace</h3>
+                        <p style="font-size:12px; letter-spacing:1px; color:var(--clr-secondary);">CAPACITY: 200 GUESTS</p>
+                    </div>
+                </div>
+                <div class="venue-card reveal delay-2">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80" alt="Ivory Lounge" style="width:100%; height:420px; object-fit:cover;">
+                    <div style="padding:24px 0;">
+                        <h3 style="font-size:22px; margin-bottom:8px;">Ivory Lounge</h3>
+                        <p style="font-size:12px; letter-spacing:1px; color:var(--clr-secondary);">CAPACITY: 100 GUESTS</p>
+                    </div>
                 </div>
             </div>
-            <div class="venue-card reveal delay-1">
-                <div class="card-image-wrapper">
-                    <img src="assets/venue_peacock_lounge.png" alt="Peacock Terrace">
-                </div>
-                <div class="card-content">
-                    <h3>Peacock Terrace</h3>
-                    <p>CAPACITY: 200 GUESTS</p>
-                </div>
+            <div class="text-center reveal">
+                <a href="venues.html" class="btn btn-outline">VIEW ALL VENUES</a>
             </div>
-            <div class="venue-card reveal delay-2">
-                <div class="card-image-wrapper">
-                    <img src="assets/venue_ivory_lounge.png" alt="Ivory Lounge">
-                </div>
-                <div class="card-content">
-                    <h3>Ivory Lounge</h3>
-                    <p>CAPACITY: 100 GUESTS</p>
-                </div>
-            </div>
-        </div>
-        <div class="text-center reveal">
-            <a href="#venues" class="btn btn-outline">VIEW ALL VENUES</a>
         </div>
     </section>
 
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials-section reveal" style="background:#3B0A1E; padding:120px 0; position:relative; overflow:hidden;">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%, rgba(201,149,106,0.06) 0%, transparent 60%), radial-gradient(ellipse at 80% 50%, rgba(212,175,106,0.04) 0%, transparent 60%); pointer-events:none;"></div>
+      <div class="container">
+        <p style="font-family:'Cinzel',serif; font-size:12px; letter-spacing:0.2em; color:#D4AF6A; text-align:center; margin-bottom:16px;">WORDS FROM OUR FAMILIES</p>
+        <h2 style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:60px; color:#FAF3EC; text-align:center; margin-bottom:80px;">Stories That Stay Forever</h2>
+
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:32px;">
+          <!-- Card 1 -->
+          <div style="background:rgba(250,243,236,0.03); border:1px solid rgba(212,175,106,0.15); padding:48px 40px; border-radius:3px;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:72px; color:#C9956A; line-height:0.5; margin-bottom:24px; opacity:0.6;">"</div>
+            <p style="font-style:italic; font-size:15px; line-height:1.9; margin-bottom:32px;">Amor Eventz turned our dream wedding into something far beyond what we imagined. Every flower, every light, every moment — absolute perfection.</p>
+            <div style="border-top:1px solid rgba(212,175,106,0.15); padding-top:24px;">
+              <p style="font-family:'Playfair Display'; font-size:16px; color:#D4AF6A; margin-bottom:4px;">Priya & Arjun Shah</p>
+              <p style="font-family:'Cinzel'; font-size:10px; letter-spacing:1px; opacity:0.5; margin:0;">Wedding · March 2024</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div style="background:rgba(201,149,106,0.05); border:1.5px solid rgba(212,175,106,0.3); padding:48px 40px; border-radius:3px;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:72px; color:#C9956A; line-height:0.5; margin-bottom:24px; opacity:1;">"</div>
+            <p style="font-style:italic; font-size:15px; line-height:1.9; margin-bottom:32px;">The Grand Ballroom was breathtaking. From the moment we walked in, we knew this was the place. The team handled everything — we just celebrated.</p>
+            <div style="border-top:1px solid rgba(212,175,106,0.15); padding-top:24px;">
+              <p style="font-family:'Playfair Display'; font-size:16px; color:#D4AF6A; margin-bottom:4px;">Meera & Rahul Kapoor</p>
+              <p style="font-family:'Cinzel'; font-size:10px; letter-spacing:1px; opacity:0.5; margin:0;">Reception · Nov 2023</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div style="background:rgba(250,243,236,0.03); border:1px solid rgba(212,175,106,0.15); padding:48px 40px; border-radius:3px;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:72px; color:#C9956A; line-height:0.5; margin-bottom:24px; opacity:0.6;">"</div>
+            <p style="font-style:italic; font-size:15px; line-height:1.9; margin-bottom:32px;">Professional, warm, and absolutely detail-oriented. Our corporate gala was flawlessly executed. The AV setup and catering exceeded expectations.</p>
+            <div style="border-top:1px solid rgba(212,175,106,0.15); padding-top:24px;">
+              <p style="font-family:'Playfair Display'; font-size:16px; color:#D4AF6A; margin-bottom:4px;">Sneha Desai</p>
+              <p style="font-family:'Cinzel'; font-size:10px; letter-spacing:1px; opacity:0.5; margin:0;">Corporate Gala · Jan 2024</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:64px;">
+          <p style="font-size:16px; opacity:0.7; margin-bottom:20px;">Rated 4.9 / 5 on Google Reviews · 120+ verified reviews</p>
+          <a href="#" class="btn btn-outline" style="border-radius:2px;">READ ALL REVIEWS →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="footer-container">
+        <div class="container footer-container">
             <div class="footer-brand">
-                <h2 class="logo-text">AMOR EVENTZ</h2>
+                <img src="assets/amor-eventz-logo.png" alt="Amor Eventz" style="height: 90px; width: auto; margin-bottom: 20px;">
                 <p>Where Every Celebration Becomes a Legend.</p>
             </div>
             <div class="footer-links">
                 <h4>EXPLORE</h4>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Venue Map</a></li>
-                    <li><a href="#">Press Kit</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="venues.html">OUR VENUES</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="gallery.html">GALLERY</a></li>
                 </ul>
             </div>
             <div class="footer-social">
                 <h4>CONNECT</h4>
                 <div class="social-icons">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="18" cy="5" r="3"></circle>
-                        <circle cx="6" cy="12" r="3"></circle>
-                        <circle cx="18" cy="19" r="3"></circle>
-                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                    </svg>
+                    <a href="https://instagram.com/amoreventz" target="_blank" class="social-icon">IN</a>
+                    <a href="https://facebook.com/amoreventz" target="_blank" class="social-icon">FB</a>
+                    <a href="https://youtube.com/amoreventz" target="_blank" class="social-icon">YT</a>
+                    <a href="https://pinterest.com/amoreventz" target="_blank" class="social-icon">PT</a>
                 </div>
             </div>
             <div class="footer-newsletter">
                 <h4>NEWSLETTER</h4>
+                <p style="font-size:13px; color:#FAF3EC; opacity:0.7; margin-bottom:12px;">Subscribe for event inspiration & exclusive offers</p>
                 <form class="newsletter-form">
-                    <input type="email" placeholder="Your Email Address">
-                    <button type="submit">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </button>
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">JOIN</button>
                 </form>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Amor Eventz. Crafted for Royalty.</p>
+            <p>&copy; 2024 AMOR EVENTZ. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919800000000" target="_blank" class="whatsapp-float" title="Chat with us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
     <script src="script.js"></script>
 </body>
-
 </html>

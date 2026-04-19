@@ -1,192 +1,186 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Amor Eventz</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?css=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <title>About Our Legacy | Amor Eventz</title>
+    
+    <!-- Fonts Overhaul -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600&family=Cinzel:wght@400;500&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Discover the legacy of Amor Eventz. Premium banquet halls and wedding venues crafted for royalty since 2009.">
+    <meta name="keywords" content="Amor Eventz about, banquet hall history, luxury wedding venue legacy">
+    <meta property="og:title" content="Our Story | Amor Eventz Legacy">
+    <meta property="og:description" content="Crafting sovereign editorial experiences since 2009. Learn about our founding vision and commitment to elegance.">
 
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .timeline-container { padding: 80px 0; background: var(--clr-primary); color: var(--clr-ivory); }
+        .timeline { position: relative; max-width: 800px; margin: 0 auto; padding: 40px 0; }
+        .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: rgba(212,175,106,0.3); }
+        .timeline-item { position: relative; margin-bottom: 60px; width: 50%; padding: 0 40px; }
+        .timeline-item:nth-child(odd) { left: 0; text-align: right; }
+        .timeline-item:nth-child(even) { left: 50%; text-align: left; }
+        .timeline-dot { position: absolute; top: 0; width: 12px; height: 12px; background: var(--clr-secondary); border-radius: 50%; z-index: 2; }
+        .timeline-item:nth-child(odd) .timeline-dot { right: -6px; }
+        .timeline-item:nth-child(even) .timeline-dot { left: -6px; }
+        .timeline-year { font-family: 'Cinzel'; font-size: 24px; color: var(--clr-secondary); margin-bottom: 8px; display: block; }
+        .timeline-content h3 { font-family: 'Playfair Display'; font-size: 18px; margin-bottom: 12px; }
+        .timeline-content p { font-size: 14px; opacity: 0.8; line-height: 1.6; }
+    </style>
+</head>
 <body>
+
+    <!-- NAVBAR -->
     <nav class="navbar scrolled">
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html" class="logo-text">AMOR EVENTZ</a>
+                <a href="index.html"><img src="assets/amor-eventz-logo.png" alt="Amor Eventz" style="height: 50px; width: auto;"></a>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html" class="active">ABOUT</a></li>
                 <li><a href="venues.html">VENUES</a></li>
                 <li><a href="services.html">SERVICES</a></li>
+                <li><a href="pricing.html">PRICING</a></li>
                 <li><a href="gallery.html">GALLERY</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
             </ul>
-            <a href="pricing.html" class="btn btn-primary">RESERVE NOW</a>
+            <a href="contact.html" class="btn btn-primary" style="font-family:'Cinzel',serif;font-size:11px;">RESERVE NOW</a>
         </div>
     </nav>
 
-    <!-- About Header -->
-    <header class="about-header">
-        <div class="about-header-bg" style="background-image: url('assets/about-header-placeholder.jpg');"></div>
-        <div class="hero-overlay"></div>
-        <div class="about-header-content reveal">
-            <h1 class="about-title">Our Story</h1>
-            <div class="divider-center"></div>
-            <p class="about-subtitle">CRAFTING ROYAL EXPERIENCES SINCE 2009</p>
+    <!-- HEADER -->
+    <header class="page-header" style="background-image: linear-gradient(rgba(59, 10, 30, 0.7), rgba(59, 10, 30, 0.7)), url('assets/hero (3).jpg');">
+        <div class="container text-center reveal">
+            <p style="font-family:'Cinzel'; letter-spacing:4px; font-size:12px; color:var(--clr-secondary);">ESTABLISHED 2009</p>
+            <h1 style="font-family:'Cormorant Garamond'; font-style:italic; font-size:72px;">Our Legacy</h1>
+            <div class="divider-center" style="margin: 30px auto; width: 80px;"></div>
         </div>
     </header>
 
-    <!-- Legacy Section -->
-    <section class="legacy-section">
-        <div class="legacy-container">
-            <div class="legacy-content reveal">
-                <h2 class="legacy-title">A Legacy of<br><span>Elegance</span></h2>
-                <p>Founded on the principles of immaculate design and uncompromising service, Amor Eventz began as a
-                    boutique agency dedicated to transforming spaces into experiences. We believe that every event is a
-                    canvas, and our medium is the interplay of light, texture, and refined aesthetics.</p>
-                <div class="quote-block">
-                    "True luxury is found in the meticulous attention to the unseen details."
+    <!-- FOUNDING STORY SECTION -->
+    <section style="padding:120px 0; background:#FAF3EC;" class="reveal">
+        <div class="container" style="display:grid; grid-template-columns:1.2fr 1fr; gap:100px; align-items:center;">
+            <div>
+                <p style="font-family:'Cinzel',serif; font-size:12px; letter-spacing:0.2em; color:#C9956A; margin-bottom:20px;">THE GENESIS</p>
+                <h2 style="font-family:'Cormorant Garamond'; font-style:italic; font-size:52px; color:#1A1A1A; margin-bottom:40px;">Where Elegance Meets Extraordinary</h2>
+                <div style="font-family:'Lora'; font-size:18px; color:#444; line-height:1.8;">
+                    <p style="margin-bottom:30px;">Amor Eventz was born from a singular vision: to create a stage where life's most precious celebrations are treated with the reverence of history. What began as a bespoke wedding curation boutique in 2009 has evolved into a sovereign collection of heritage-inspired venues.</p>
+                    <p>Every chandelier, every silk drape, and every carved archway in our halls is a testament to our commitment to timeless luxury. We don't just host events; we preserve legacies through meticulous attention to detail and unmatched hospitality.</p>
                 </div>
-                <p>Today, we stand as the premier choice for sovereign events, orchestrating moments that resonate long
-                    after the final guest departs.</p>
+                <div style="margin-top:40px; padding-left:30px; border-left:2px solid var(--clr-secondary);">
+                    <p style="font-style:italic; font-size:20px; color:var(--clr-primary);">"True luxury is found in the meticulous attention to the unseen details."</p>
+                    <p style="font-family:'Cinzel'; font-size:11px; margin-top:10px;">— FOUNDING PHILOSOPHY</p>
+                </div>
             </div>
-            <div class="legacy-image-wrapper reveal delay-1">
-                <div class="legacy-image-border"></div>
-                <div class="legacy-image">
-                    <!-- User provided image goes here -->
-                    <img src="assets/legacy-placeholder.jpg" alt="Amor Eventz Legacy">
+            <div style="position:relative;">
+                <img src="assets/about_heritage_hallway.png" alt="Heritage Hallway" style="width:100%; height:600px; object-fit:cover; filter: contrast(1.05);">
+                <div style="position:absolute; inset:0; border:1px solid #D4AF6A; transform:translate(-20px, 20px); pointer-events:none; z-index:-1;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section class="timeline-container reveal">
+        <div class="container">
+            <div class="text-center" style="margin-bottom:80px;">
+                <p style="font-family:'Cinzel'; letter-spacing:3px; color:var(--clr-secondary);">THE JOURNEY</p>
+                <h2 style="font-size:48px;">Milestones of Excellence</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-year">2009</span>
+                    <div class="timeline-content">
+                        <h3>The Boutique Era</h3>
+                        <p>Amor Eventz launches as a boutique event styling agency in the heart of the city.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal delay-1">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-year">2015</span>
+                    <div class="timeline-content">
+                        <h3>Grand Ballroom Unveiled</h3>
+                        <p>Our flagship 500-capacity Grand Ballroom opens, setting new standards for luxury.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal delay-2">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-year">2020</span>
+                    <div class="timeline-content">
+                        <h3>Digital Transformation</h3>
+                        <p>Revolutionized guest experiences with high-end virtual tours and safety systems.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal delay-3">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-year">2024</span>
+                    <div class="timeline-content">
+                        <h3>The Legend Continues</h3>
+                        <p>Awarded 'Premier Luxury Venue of the Year' with 500+ successful celebrations.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pillars Section -->
-    <section class="pillars-section">
-        <div class="section-header reveal">
-            <h2 class="section-title text-center">Our Pillars</h2>
-            <div class="divider-center"></div>
-        </div>
+    <div class="ornament-divider" style="padding: 60px 0;">
+        <svg width="320" height="20" viewBox="0 0 320 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block; margin:0 auto; opacity:0.3;">
+            <line x1="0" y1="10" x2="130" y2="10" stroke="#D4AF6A" stroke-width="0.5"/>
+            <circle cx="160" cy="10" r="3" fill="#D4AF6A"/>
+            <line x1="190" y1="10" x2="320" y2="10" stroke="#D4AF6A" stroke-width="0.5"/>
+        </svg>
+    </div>
 
-        <div class="pillars-grid">
-            <div class="pillar-card reveal">
-                <div class="pillar-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M6 3h12l4 6-10 13L2 9Z"></path>
-                        <path d="M11 3 8 9l4 13 4-13-3-6"></path>
-                        <path d="M2 9h20"></path>
-                    </svg>
-                </div>
-                <h3>ELEGANCE</h3>
-                <p>Curating aesthetics that transcend trends, focusing on timeless sophistication.</p>
-            </div>
-
-            <div class="pillar-card reveal delay-1">
-                <div class="pillar-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path
-                            d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z">
-                        </path>
-                    </svg>
-                </div>
-                <h3>TRUST</h3>
-                <p>Building enduring relationships through transparent communication and flawless execution.</p>
-            </div>
-
-            <div class="pillar-card reveal delay-2">
-                <div class="pillar-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
-                        <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
-                        <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
-                        <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
-                        <path
-                            d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z">
-                        </path>
-                    </svg>
-                </div>
-                <h3>CREATIVITY</h3>
-                <p>Designing bespoke narratives that reflect the unique vision of every client.</p>
-            </div>
-
-            <div class="pillar-card reveal delay-3">
-                <div class="pillar-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 15v5s3-1.5 5 2l-1.5-6"></path>
-                        <path d="M12 15v5s-3-1.5-5 2l1.5-6"></path>
-                        <circle cx="12" cy="7" r="5"></circle>
-                    </svg>
-                </div>
-                <h3>EXCELLENCE</h3>
-                <p>Delivering unparalleled quality in every detail, from concept to completion.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer border-top">
-        <div class="footer-container">
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-container">
             <div class="footer-brand">
-                <a href="index.html" class="logo-text">AMOR EVENTZ</a>
-                <p style="margin-top: 16px; font-size: 14px; opacity: 0.8; max-width: 250px;">Crafting Sovereign
-                    Editorial experiences. Where every detail is a brushstroke on the canvas of your memory.</p>
+                <img src="assets/amor-eventz-logo.png" alt="Amor Eventz" style="height: 90px; width: auto; margin-bottom: 20px;">
+                <p>Where Every Celebration Becomes a Legend.</p>
             </div>
             <div class="footer-links">
                 <h4>EXPLORE</h4>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Venue Map</a></li>
-                    <li><a href="#">Press Kit</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="venues.html">OUR VENUES</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="gallery.html">GALLERY</a></li>
                 </ul>
             </div>
             <div class="footer-social">
                 <h4>CONNECT</h4>
                 <div class="social-icons">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="18" cy="5" r="3"></circle>
-                        <circle cx="6" cy="12" r="3"></circle>
-                        <circle cx="18" cy="19" r="3"></circle>
-                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                    </svg>
+                    <a href="https://instagram.com/amoreventz" target="_blank" class="social-icon">IN</a>
+                    <a href="https://facebook.com/amoreventz" target="_blank" class="social-icon">FB</a>
+                    <a href="https://youtube.com/amoreventz" target="_blank" class="social-icon">YT</a>
+                    <a href="https://pinterest.com/amoreventz" target="_blank" class="social-icon">PT</a>
                 </div>
             </div>
             <div class="footer-newsletter">
                 <h4>NEWSLETTER</h4>
+                <p style="font-size:13px; color:#FAF3EC; opacity:0.7; margin-bottom:12px;">Subscribe for event inspiration & exclusive offers</p>
                 <form class="newsletter-form">
-                    <input type="email" placeholder="Your Email Address">
-                    <button type="submit">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </button>
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">JOIN</button>
                 </form>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Amor Eventz. Crafted for Royalty.</p>
+            <p>&copy; 2024 AMOR EVENTZ. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919800000000" target="_blank" class="whatsapp-float" title="Chat with us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
     <script src="script.js"></script>
 </body>
-
 </html>

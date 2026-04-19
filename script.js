@@ -1,133 +1,124 @@
+/**
+ * AMOR EVENTZ — Master Interaction Script
+ * Robust Reveal Animations, Cinematic Sliders, and Stat Counters
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. CINEMATIC HERO SLIDER
+    const slider = document.getElementById('heroSlider');
+    const thumbs = document.getElementById('heroThumbs');
+    if (slider && thumbs) {
+        const slides = slider.querySelectorAll('.hero-slide');
+        const thumbItems = thumbs.querySelectorAll('.hero-thumb');
+        let currentSlide = 0;
+        let slideInterval;
 
-    // ─── 1. SMOOTH SCROLL (Pure DOM) ────────────────────────────────────────
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (!href || href === '#') return;
-            const target = document.querySelector(href);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
+        function showSlide(index) {
+            slides.forEach(s => s.classList.remove('active', 'previous'));
+            thumbItems.forEach(t => t.classList.remove('active'));
+            
+            const prevIndex = currentSlide;
+            currentSlide = index;
+            
+            slides[prevIndex].classList.add('previous');
+            slides[currentSlide].classList.add('active');
+            thumbItems[currentSlide].classList.add('active');
+        }
 
+        function nextSlide() {
+            let next = (currentSlide + 1) % slides.length;
+            showSlide(next);
+        }
 
-    // ─── 2. STICKY NAVBAR ───────────────────────────────────────────────────
-    const navbar = document.querySelector('.navbar');
-    if (navbar) {
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        // Auto-advance
+        slideInterval = setInterval(nextSlide, 6000);
+
+        // Thumbnail Clicks
+        thumbItems.forEach((thumb, idx) => {
+            thumb.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                showSlide(idx);
+                slideInterval = setInterval(nextSlide, 6000);
+            });
         });
     }
 
+    // 2. ROBUST COUNTER ANIMATIONS (IntersectionObserver)
+    const counters = document.querySelectorAll('.counter');
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.getAttribute('data-target'));
+                const suffix = el.getAttribute('data-suffix') || '';
+                const duration = 2000; // 2 seconds
+                const frameRate = 1000 / 60; // 60 FPS
+                const totalFrames = Math.round(duration / frameRate);
+                let frame = 0;
 
-    // ─── 3. SCROLL REVEAL ANIMATIONS ────────────────────────────────────────
-    const observer = new IntersectionObserver((entries) => {
+                const animate = () => {
+                    frame++;
+                    const progress = frame / totalFrames;
+                    // Ease out expo
+                    const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                    const current = Math.floor(easeProgress * target);
+                    
+                    el.textContent = current + suffix;
+
+                    if (frame < totalFrames) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        el.textContent = target + suffix;
+                    }
+                };
+
+                requestAnimationFrame(animate);
+                counterObserver.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(c => counterObserver.observe(c));
+
+    // 3. SCROLL REVEAL ANIMATIONS
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                if (entry.target.classList.contains('about-content')) animateCounters();
-                observer.unobserve(entry.target);
+                // Optional: stop observing once revealed
+                // revealObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.15 });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    revealElements.forEach(el => revealObserver.observe(el));
 
+    // 4. NAVBAR SCROLL EFFECT
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
 
-    // ─── 4. NUMBER COUNTER ANIMATION ────────────────────────────────────────
-    let countersStarted = false;
-
-    function animateCounters() {
-        if (countersStarted) return;
-        countersStarted = true;
-        document.querySelectorAll('.stat-number').forEach(counter => {
-            const target = +counter.getAttribute('data-target');
-            const step = target / (1800 / 16);
-            let current = 0;
-            const tick = () => {
-                current += step;
-                if (current < target) {
-                    counter.textContent = Math.ceil(current);
-                    requestAnimationFrame(tick);
-                } else {
-                    counter.textContent = target;
-                }
-            };
-            requestAnimationFrame(tick);
-        });
-    }
-
-
-    // ─── 5. FAQ ACCORDION ───────────────────────────────────────────────────
-    document.querySelectorAll('.faq-item').forEach(item => {
-        const btn = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-        if (!btn || !answer) return;
-
-        btn.addEventListener('click', () => {
-            const isOpen = item.classList.contains('active');
-            document.querySelectorAll('.faq-item').forEach(i => {
-                i.classList.remove('active');
-                const a = i.querySelector('.faq-answer');
-                if (a) a.style.maxHeight = null;
-            });
-            if (!isOpen) {
-                item.classList.add('active');
-                answer.style.maxHeight = answer.scrollHeight + 'px';
+    // 5. SMOOTH ANCHOR SCROLLING
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
         });
     });
-
-
-    // ─── 6. CINEMATIC HERO SLIDER with THUMBNAIL NAVIGATION ─────────────────
-    const slides = Array.from(document.querySelectorAll('.hero-slide'));
-    const thumbs = Array.from(document.querySelectorAll('.hero-thumb'));
-    let current = 0;
-    let autoTimer = null;
-
-    function goToSlide(index) {
-        // Clear old state
-        slides.forEach(s => { s.classList.remove('active', 'previous'); });
-        thumbs.forEach(t => t.classList.remove('active'));
-
-        // Briefly mark the outgoing slide as 'previous' so it fades out underneath
-        if (slides[current]) slides[current].classList.add('previous');
-
-        current = index;
-        slides[current].classList.add('active');
-        if (thumbs[current]) thumbs[current].classList.add('active');
-
-        // Remove 'previous' after crossfade completes
-        setTimeout(() => {
-            slides.forEach(s => s.classList.remove('previous'));
-        }, 2600);
-    }
-
-    function startAutoplay() {
-        clearInterval(autoTimer);
-        autoTimer = setInterval(() => {
-            goToSlide((current + 1) % slides.length);
-        }, 5000);
-    }
-
-    // Init
-    if (slides.length > 0) {
-        goToSlide(0);
-        startAutoplay();
-
-        // Thumbnail click → jump to that slide and reset autoplay timer
-        thumbs.forEach(thumb => {
-            thumb.addEventListener('click', () => {
-                const idx = parseInt(thumb.getAttribute('data-index'), 10);
-                if (idx !== current) {
-                    goToSlide(idx);
-                    startAutoplay(); // reset timer so autoplay doesn't snap immediately
-                }
-            });
-        });
-    }
-
 });

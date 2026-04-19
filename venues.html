@@ -1,193 +1,213 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Spaces | Amor Eventz</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?css=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap"
-        rel="stylesheet">
+    <title>Our Luxury Venues | Amor Eventz</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600&family=Cinzel:wght@400;500&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    
+    <meta name="description" content="Explore our three signature venues: The Grand Ballroom, Peacock Terrace, and Ivory Lounge. Spaces designed for royal weddings and premium corporate events.">
     <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .venue-detail-section { padding: 120px 0; border-bottom: 1px solid rgba(212,175,106,0.1); }
+        .venue-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .venue-specs { margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .spec-item { border-left: 1px solid var(--clr-secondary); padding-left: 20px; }
+        .spec-item h4 { font-family: 'Cinzel'; font-size: 11px; color: var(--clr-secondary); letter-spacing: 1px; margin-bottom: 4px; }
+        .spec-item p { font-size: 14px; margin: 0; }
+        .venue-image-stack { position: relative; }
+        .venue-image-stack img { width: 100%; height: 500px; object-fit: cover; }
+        .venue-image-stack::after { content: ''; position: absolute; inset: 0; border: 1px solid #D4AF6A; transform: translate(15px, 15px); pointer-events: none; }
+    </style>
 </head>
-
 <body>
-    <nav class="navbar scrolled"> <!-- Always solid on inner pages -->
+
+    <!-- NAVBAR -->
+    <nav class="navbar scrolled">
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html" class="logo-text">AMOR EVENTZ</a>
+                <a href="index.html"><img src="assets/amor-eventz-logo.png" alt="Amor Eventz" style="height: 50px; width: auto;"></a>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="venues.html" class="active">VENUES</a></li>
                 <li><a href="services.html">SERVICES</a></li>
+                <li><a href="pricing.html">PRICING</a></li>
                 <li><a href="gallery.html">GALLERY</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
             </ul>
-            <a href="reserve.html" class="btn btn-primary">RESERVE NOW</a>
+            <a href="contact.html" class="btn btn-primary" style="font-family:'Cinzel',serif;font-size:11px;">RESERVE NOW</a>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <header class="page-header">
-        <div class="page-header-container">
-            <div class="header-left">
-                <p class="subtitle">THE COLLECTION</p>
-                <h1 class="page-title">Our Spaces</h1>
-            </div>
-            <div class="header-right">
-                <a href="#all-venues" class="btn btn-outline border-all">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round"
-                        style="margin-right: 8px; vertical-align: middle;">
-                        <rect x="3" y="3" width="7" height="7"></rect>
-                        <rect x="14" y="3" width="7" height="7"></rect>
-                        <rect x="14" y="14" width="7" height="7"></rect>
-                        <rect x="3" y="14" width="7" height="7"></rect>
-                    </svg>
-                    3 EXCLUSIVE VENUES
-                </a>
-            </div>
+    <!-- HEADER -->
+    <header class="page-header" style="background-image: linear-gradient(rgba(59, 10, 30, 0.7), rgba(59, 10, 30, 0.7)), url('assets/hero (4).jpg');">
+        <div class="container text-center reveal">
+            <p style="font-family:'Cinzel'; letter-spacing:4px; font-size:12px; color:var(--clr-secondary);">SIGNATURE SPACES</p>
+            <h1 style="font-family:'Cormorant Garamond'; font-style:italic; font-size:72px;">Our Venues</h1>
+            <div class="divider-center" style="margin: 30px auto; width: 80px;"></div>
         </div>
     </header>
 
-    <div class="filter-bar">
-        <ul class="filter-menu">
-            <li><a href="#" class="active">ALL</a></li>
-            <li><a href="#">WEDDINGS</a></li>
-            <li><a href="#">CORPORATE</a></li>
-            <li><a href="#">SOCIAL</a></li>
-        </ul>
-        <div class="filter-divider"></div>
-    </div>
-
-    <!-- Venues List -->
-    <section class="venue-list">
-        <!-- Venue 1: Grand Ballroom -->
-        <article class="venue-row">
-            <div class="venue-info reveal">
-                <h2 class="venue-title">The Grand Ballroom</h2>
-                <p class="venue-desc">A majestic space defined by crystal chandeliers and soaring ceilings. Perfect for
-                    opulent receptions and grand galas, offering unparalleled elegance and acoustic perfection.</p>
-                <div class="venue-stats">
-                    <div class="v-stat">
-                        <span class="v-stat-label">CAPACITY</span>
-                        <span class="v-stat-val">500 Guests</span>
-                    </div>
-                    <div class="v-stat">
-                        <span class="v-stat-label">AREA</span>
-                        <span class="v-stat-val">8,500 sq ft</span>
-                    </div>
-                </div>
-                <a href="#" class="btn btn-outline">ENQUIRE SPACE &rarr;</a>
+    <!-- VENUE 1: GRAND BALLROOM -->
+    <section class="venue-detail-section reveal">
+        <div class="container venue-detail-grid">
+            <div class="venue-image-stack">
+                <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&q=80" alt="Grand Ballroom Decoration">
             </div>
-            <div class="venue-image reveal delay-1">
-                <!-- User provided image goes here -->
-                <div class="image-placeholder"><img src="assets/grand-ballroom-placeholder.jpg"
-                        alt="The Grand Ballroom"></div>
-            </div>
-        </article>
-
-        <!-- Venue 2: Peacock Terrace -->
-        <article class="venue-row reverse">
-            <div class="venue-image reveal">
-                <!-- User provided image goes here -->
-                <div class="image-placeholder"><img src="assets/peacock-terrace-placeholder.jpg" alt="Peacock Terrace">
-                </div>
-            </div>
-            <div class="venue-info reveal delay-1">
-                <h2 class="venue-title">Peacock Terrace</h2>
-                <p class="venue-desc">An enchanting open-air enclave surrounded by manicured topiary. The ideal setting
-                    for sunset cocktails or intimate ceremonies beneath a canopy of stars.</p>
-                <div class="venue-stats">
-                    <div class="v-stat">
-                        <span class="v-stat-label">CAPACITY</span>
-                        <span class="v-stat-val">200 Guests</span>
+            <div>
+                <p style="font-family:'Cinzel'; font-size:12px; color:var(--clr-secondary); letter-spacing:2px; margin-bottom:12px;">THE FLAGSHIP</p>
+                <h2 style="font-size:48px; margin-bottom:24px;">The Grand Ballroom</h2>
+                <p style="font-family:'Lora'; font-size:16px; line-height:1.7; color:#555;">Our crown jewel, designed for the most magnificent milestones. Featuring soaring hand-plastered ceilings, artisanal gold-leaf detailing, and state-of-the-art acoustics, this space transforms every celebration into a royal gala.</p>
+                
+                <div class="venue-specs">
+                    <div class="spec-item">
+                        <h4>CAPACITY</h4>
+                        <p>500 - 800 Guests</p>
                     </div>
-                    <div class="v-stat">
-                        <span class="v-stat-label">AREA</span>
-                        <span class="v-stat-val">4,200 sq ft</span>
+                    <div class="spec-item">
+                        <h4>IDEAL FOR</h4>
+                        <p>Weddings & Receptions</p>
+                    </div>
+                    <div class="spec-item">
+                        <h4>LIGHTING</h4>
+                        <p>Custom Ambient Control</p>
+                    </div>
+                    <div class="spec-item">
+                        <h4>PARKING</h4>
+                        <p>Dedicated Valet Zone</p>
                     </div>
                 </div>
-                <a href="#" class="btn btn-outline">ENQUIRE SPACE &rarr;</a>
+                <div style="margin-top:40px;">
+                    <a href="contact.html" class="btn btn-outline" style="border-radius:0;">PLAN YOUR WEDDING</a>
+                </div>
             </div>
-        </article>
-    </section>
-
-    <!-- Virtual Tour Section -->
-    <section class="virtual-tour reveal">
-        <!-- User provided background image goes here via CSS or img tag -->
-        <div class="tour-bg-placeholder" style="background-image: url('assets/virtual-tour-bg-placeholder.jpg');"></div>
-        <div class="tour-overlay"></div>
-        <div class="tour-box">
-            <p class="subtitle">IMMERSIVE EXPERIENCE</p>
-            <h2 class="tour-title">Take a Virtual Tour</h2>
-            <button class="play-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" class="play-icon">
-                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                </svg>
-            </button>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- VENUE 2: PEACOCK TERRACE -->
+    <section class="venue-detail-section reveal" style="background:var(--clr-light-section);">
+        <div class="container venue-detail-grid">
+            <div style="order: 2;">
+                <div class="venue-image-stack">
+                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80" alt="Peacock Terrace">
+                </div>
+            </div>
+            <div style="order: 1;">
+                <p style="font-family:'Cinzel'; font-size:12px; color:var(--clr-secondary); letter-spacing:2px; margin-bottom:12px;">INTIMATE & STYLISH</p>
+                <h2 style="font-size:48px; margin-bottom:24px;">Peacock Terrace</h2>
+                <p style="font-family:'Lora'; font-size:16px; line-height:1.7; color:#555;">An open-concept lounge that blends modern minimalism with heritage accents. Perfect for high-end cocktail soirées or corporate networking events that require a sophisticated breeze.</p>
+                
+                <div class="venue-specs">
+                    <div class="spec-item" style="border-color: #333;">
+                        <h4>CAPACITY</h4>
+                        <p>150 - 250 Guests</p>
+                    </div>
+                    <div class="spec-item" style="border-color: #333;">
+                        <h4>IDEAL FOR</h4>
+                        <p>Receptions & Socials</p>
+                    </div>
+                    <div class="spec-item" style="border-color: #333;">
+                        <h4>VIBE</h4>
+                        <p>Open-Air Luxury</p>
+                    </div>
+                    <div class="spec-item" style="border-color: #333;">
+                        <h4>CATERING</h4>
+                        <p>Live Tandoor & Grill</p>
+                    </div>
+                </div>
+                <div style="margin-top:40px;">
+                    <a href="contact.html" class="btn btn-primary" style="border-radius:0;">BOOK THE TERRACE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VENUE 3: IVORY LOUNGE -->
+    <section class="venue-detail-section reveal">
+        <div class="container venue-detail-grid">
+            <div class="venue-image-stack">
+                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80" alt="Ivory Lounge">
+            </div>
+            <div>
+                <p style="font-family:'Cinzel'; font-size:12px; color:var(--clr-secondary); letter-spacing:2px; margin-bottom:12px;">BESPOKE & PRIVATE</p>
+                <h2 style="font-size:48px; margin-bottom:24px;">Ivory Lounge</h2>
+                <p style="font-family:'Lora'; font-size:16px; line-height:1.7; color:#555;">Minimalist, elegant, and perfectly sized for private family ceremonies or corporate board meetings. The Ivory Lounge offers complete privacy and a distraction-free sanctuary for your most focused moments.</p>
+                
+                <div class="venue-specs">
+                    <div class="spec-item">
+                        <h4>CAPACITY</h4>
+                        <p>50 - 100 Guests</p>
+                    </div>
+                    <div class="spec-item">
+                        <h4>IDEAL FOR</h4>
+                        <p>Private Dinners & Meetings</p>
+                    </div>
+                    <div class="spec-item">
+                        <h4>TECH</h4>
+                        <p>HD Audio-Visual Ready</p>
+                    </div>
+                    <div class="spec-item">
+                        <h4>ACCESS</h4>
+                        <p>Private Lift Entrance</p>
+                    </div>
+                </div>
+                <div style="margin-top:40px;">
+                    <a href="contact.html" class="btn btn-outline" style="border-radius:0;">START ENQUIRY</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="footer-container">
+        <div class="container footer-container">
             <div class="footer-brand">
-                <a href="index.html" class="logo-text">AMOR EVENTZ</a>
+                <img src="assets/amor-eventz-logo.png" alt="Amor Eventz" style="height: 90px; width: auto; margin-bottom: 20px;">
                 <p>Where Every Celebration Becomes a Legend.</p>
             </div>
             <div class="footer-links">
                 <h4>EXPLORE</h4>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Venue Map</a></li>
-                    <li><a href="#">Press Kit</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="venues.html">OUR VENUES</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="gallery.html">GALLERY</a></li>
                 </ul>
             </div>
             <div class="footer-social">
                 <h4>CONNECT</h4>
                 <div class="social-icons">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="18" cy="5" r="3"></circle>
-                        <circle cx="6" cy="12" r="3"></circle>
-                        <circle cx="18" cy="19" r="3"></circle>
-                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                    </svg>
+                    <a href="https://instagram.com/amoreventz" target="_blank" class="social-icon">IN</a>
+                    <a href="https://facebook.com/amoreventz" target="_blank" class="social-icon">FB</a>
+                    <a href="https://youtube.com/amoreventz" target="_blank" class="social-icon">YT</a>
+                    <a href="https://pinterest.com/amoreventz" target="_blank" class="social-icon">PT</a>
                 </div>
             </div>
             <div class="footer-newsletter">
                 <h4>NEWSLETTER</h4>
+                <p style="font-size:13px; color:#FAF3EC; opacity:0.7; margin-bottom:12px;">Subscribe for event inspiration & exclusive offers</p>
                 <form class="newsletter-form">
-                    <input type="email" placeholder="Your Email Address">
-                    <button type="submit">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </button>
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">JOIN</button>
                 </form>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Amor Eventz. Crafted for Royalty.</p>
+            <p>&copy; 2024 AMOR EVENTZ. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919800000000" target="_blank" class="whatsapp-float" title="Chat with us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
     <script src="script.js"></script>
 </body>
-
 </html>

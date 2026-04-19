@@ -1,271 +1,174 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Amor Eventz</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?css=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap"
-        rel="stylesheet">
+    <title>Services & Curation | Amor Eventz</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600&family=Cinzel:wght@400;500&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    
+    <meta name="description" content="Explore our bespoke event services: from gourmet catering and floral design to royal wedding planning and corporate event curation.">
     <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .service-intro { padding: 100px 0; background: #FAF3EC; text-align: center; }
+        .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding-bottom: 100px; }
+        .service-card-luxury { 
+            background: #fff; border: 1px solid rgba(212,175,106,0.15); padding: 50px 40px; 
+            transition: all 0.5s ease; position: relative; overflow: hidden;
+        }
+        .service-card-luxury:hover { transform: translateY(-10px); border-color: var(--clr-secondary); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .service-icon-wrap { margin-bottom: 30px; color: var(--clr-secondary); }
+        .service-card-luxury h3 { font-family: 'Cinzel'; font-size: 20px; margin-bottom: 20px; color: var(--clr-primary); }
+        .service-card-luxury p { font-size: 15px; line-height: 1.8; color: #666; }
+        
+        .catering-highlight { background: var(--clr-primary); color: var(--clr-ivory); padding: 120px 0; }
+    </style>
 </head>
-
 <body>
+
+    <!-- NAVBAR -->
     <nav class="navbar scrolled">
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html" class="logo-text">AMOR EVENTZ</a>
+                <a href="index.html"><img src="assets/amor-eventz-logo.png" alt="Amor Eventz" style="height: 50px; width: auto;"></a>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="venues.html">VENUES</a></li>
                 <li><a href="services.html" class="active">SERVICES</a></li>
+                <li><a href="pricing.html">PRICING</a></li>
                 <li><a href="gallery.html">GALLERY</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
             </ul>
-            <a href="reserve.html" class="btn btn-primary">RESERVE NOW</a>
+            <a href="contact.html" class="btn btn-primary" style="font-family:'Cinzel',serif;font-size:11px;">RESERVE NOW</a>
         </div>
     </nav>
 
-    <!-- Services Header -->
-    <header class="services-header">
-        <div class="services-header-bg" style="background-image: url('assets/services-header-placeholder.jpg');"></div>
-        <div class="hero-overlay"></div>
-        <div class="services-header-content reveal">
-            <h1 class="services-title">Everything Your<br>Event Deserves</h1>
-            <div class="divider-center"></div>
-            <p class="services-subtitle">Curated experiences designed with uncompromising elegance. We orchestrate every
-                detail so you can simply revel in the moment.</p>
+    <!-- HEADER -->
+    <header class="page-header" style="background-image: linear-gradient(rgba(59, 10, 30, 0.7), rgba(59, 10, 30, 0.7)), url('https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=1600&q=80');">
+        <div class="container text-center reveal">
+            <p style="font-family:'Cinzel'; letter-spacing:4px; font-size:12px; color:var(--clr-secondary);">ART OF HOSTING</p>
+            <h1 style="font-family:'Cormorant Garamond'; font-style:italic; font-size:72px;">Our Services</h1>
+            <div class="divider-center" style="margin: 30px auto; width: 80px;"></div>
         </div>
     </header>
 
-    <!-- Royal Offerings -->
-    <section class="offerings">
-        <div class="section-header reveal">
-            <h2 class="section-title text-center">Our Royal Offerings</h2>
-            <div class="divider-center"></div>
+    <!-- INTRO -->
+    <section class="service-intro reveal">
+        <div class="container">
+            <h2 style="font-family:'Cormorant Garamond'; font-style:italic; font-size:48px; color:var(--clr-primary); margin-bottom:20px;">Bespoke Curation for Every Milestone</h2>
+            <p style="max-width:700px; margin:0 auto; font-size:18px; color:#555;">From the initial concept to the final toast, our team of experts provides end-to-end event management that prioritizes your vision and exceeds expectations.</p>
         </div>
-        <div class="offerings-grid">
-            <!-- Card 1 -->
-            <div class="offering-card reveal">
-                <div class="offering-icon">🎉</div>
-                <h3 class="offering-title">Wedding Planning</h3>
-                <p class="offering-desc">From majestic ceremonies to intimate vows, flawless execution of your grand
-                    vision.</p>
-                <ul class="offering-list">
-                    <li>Full-service coordination</li>
-                    <li>Venue selection & styling</li>
-                    <li>Day-of event management</li>
-                </ul>
+    </section>
+
+    <!-- SERVICE GRID -->
+    <section style="background:#FAF3EC; padding-bottom:120px;">
+        <div class="container service-grid">
+            <div class="service-card-luxury reveal">
+                <div class="service-icon-wrap">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M2 22C2 17.5817 5.58172 14 10 14C14.4183 14 18 17.5817 18 22"></path>
+                        <circle cx="10" cy="7" r="5"></circle>
+                        <path d="M18 10L21 7L18 4"></path>
+                    </svg>
+                </div>
+                <h3>ROYAL WEDDINGS</h3>
+                <p>Complete matrimonial curation including decor, rituals management, and guest experiences designed for lasting impressions.</p>
             </div>
-            <!-- Card 2 -->
-            <div class="offering-card reveal delay-1">
-                <div class="offering-icon">🍽️</div>
-                <h3 class="offering-title">Exquisite Catering</h3>
-                <p class="offering-desc">Culinary masterpieces tailored to tantalize and impress the most discerning
-                    palates.</p>
-                <ul class="offering-list">
-                    <li>Custom multi-course menus</li>
-                    <li>Artisan pastry & cakes</li>
-                    <li>Sommelier wine pairings</li>
-                </ul>
+            
+            <div class="service-card-luxury reveal delay-1">
+                <div class="service-icon-wrap">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="7" width="20" height="14" rx="2"></rect>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                </div>
+                <h3>CORPORATE GALAS</h3>
+                <p>Sophisticated settings for annual day celebrations, award ceremonies, and high-stakes networking events with full AV support.</p>
             </div>
-            <!-- Card 3 -->
-            <div class="offering-card reveal delay-2">
-                <div class="offering-icon">✨</div>
-                <h3 class="offering-title">Opulent Decor</h3>
-                <p class="offering-desc">Transforming spaces into breathtaking visual narratives with bespoke design
-                    elements.</p>
-                <ul class="offering-list">
-                    <li>Grand floral installations</li>
-                    <li>Custom draping & staging</li>
-                    <li>Ambient atmosphere lighting</li>
-                </ul>
-            </div>
-            <!-- Card 4 -->
-            <div class="offering-card reveal">
-                <div class="offering-icon">🔊</div>
-                <h3 class="offering-title">Audio Visual Excellence</h3>
-                <p class="offering-desc">State-of-the-art sensory experiences to amplify the emotion of every moment.
-                </p>
-                <ul class="offering-list">
-                    <li>Premium sound engineering</li>
-                    <li>Theatrical lighting design</li>
-                    <li>Cinematic projection mapping</li>
-                </ul>
-            </div>
-            <!-- Card 5 -->
-            <div class="offering-card reveal delay-1">
-                <div class="offering-icon">🛎️</div>
-                <h3 class="offering-title">Guest Concierge</h3>
-                <p class="offering-desc">White-glove service ensuring your distinguished guests are treated like
-                    royalty.</p>
-                <ul class="offering-list">
-                    <li>VIP travel & accommodation</li>
-                    <li>Personalized welcome gifting</li>
-                    <li>Exclusive itinerary management</li>
-                </ul>
-            </div>
-            <!-- Card 6 -->
-            <div class="offering-card reveal delay-2">
-                <div class="offering-icon">🍸</div>
-                <h3 class="offering-title">Mixology & Bar</h3>
-                <p class="offering-desc">Crafted libations and theatrical pours that serve as conversational
-                    masterpieces.</p>
-                <ul class="offering-list">
-                    <li>Signature cocktail design</li>
-                    <li>Artisanal ice & garnishes</li>
-                    <li>Flair bartending services</li>
-                </ul>
+
+            <div class="service-card-luxury reveal delay-2">
+                <div class="service-icon-wrap">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+                    </svg>
+                </div>
+                <h3>PRIVATE SOIRÉES</h3>
+                <p>Intimate birthday celebrations, anniversaries, and family gatherings treated with the same meticulous care as our grand ballrooms.</p>
             </div>
         </div>
     </section>
 
-    <!-- The Journey to Perfection -->
-    <section class="journey">
-        <div class="section-header reveal">
-            <h2 class="section-title text-center">The Journey to Perfection</h2>
-            <div class="divider-center"></div>
-        </div>
-
-        <div class="journey-container reveal delay-1">
-            <div class="journey-line"></div>
-            <div class="journey-steps">
-                <div class="journey-step">
-                    <div class="step-icon-box">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                            </path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                    </div>
-                    <h4 class="step-title">ENQUIRE</h4>
-                    <p class="step-desc">Begin the dialogue. Share your vision and event aspirations with our esteemed
-                        curators.</p>
+    <!-- CATERING HIGHLIGHT -->
+    <section class="catering-highlight reveal">
+        <div class="container">
+            <div style="display:grid; grid-template-columns:1fr 1.2fr; gap:80px; align-items:center;">
+                <div style="position:relative;">
+                    <img src="https://images.unsplash.com/photo-1555244162-803834f70033?w=800&q=80" alt="Gourmet Catering" style="width:100%; height:500px; object-fit:cover; border:1px solid rgba(212,175,106,0.5);">
                 </div>
-                <div class="journey-step">
-                    <div class="step-icon-box">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                    </div>
-                    <h4 class="step-title">VISIT</h4>
-                    <p class="step-desc">Experience the spaces. Walk through our luxurious venues and feel the ambiance.
-                    </p>
-                </div>
-                <div class="journey-step">
-                    <div class="step-icon-box">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 20h9"></path>
-                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-                        </svg>
-                    </div>
-                    <h4 class="step-title">CUSTOMISE</h4>
-                    <p class="step-desc">Tailor every detail. From bespoke menus to custom drapery, we mold the event to
-                        you.</p>
-                </div>
-                <div class="journey-step">
-                    <div class="step-icon-box">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                            <path d="M2 17l10 5 10-5"></path>
-                            <path d="M2 12l10 5 10-5"></path>
-                        </svg>
-                    </div>
-                    <h4 class="step-title">CELEBRATE</h4>
-                    <p class="step-desc">Revel in glory. We handle the intricacies while you bask in the majesty of your
-                        event.</p>
+                <div>
+                    <p style="font-family:'Cinzel'; letter-spacing:3px; color:var(--clr-secondary); font-size:12px; margin-bottom:20px;">CULINARY EXCELLENCE</p>
+                    <h2 style="font-family:'Cormorant Garamond'; font-style:italic; font-size:56px; margin-bottom:40px;">A Symphony of Flavours</h2>
+                    <p style="font-family:'Lora'; font-size:18px; line-height:1.9; opacity:0.8; margin-bottom:30px;">Our in-house culinary masters craft artisanal menus that blend regional traditions with global flair. From grand buffet spreads to intimate plated dinners, we ensure your guests talk about the meal for years to come.</p>
+                    <ul style="list-style:none; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                        <li style="display:flex; align-items:center; gap:12px; font-family:'Cinzel'; font-size:11px; color:var(--clr-secondary);"><span style="width:6px; height:6px; background:var(--clr-secondary); border-radius:50%;"></span> LIVE COUNTERS</li>
+                        <li style="display:flex; align-items:center; gap:12px; font-family:'Cinzel'; font-size:11px; color:var(--clr-secondary);"><span style="width:6px; height:6px; background:var(--clr-secondary); border-radius:50%;"></span> GLOBAL CUISINES</li>
+                        <li style="display:flex; align-items:center; gap:12px; font-family:'Cinzel'; font-size:11px; color:var(--clr-secondary);"><span style="width:6px; height:6px; background:var(--clr-secondary); border-radius:50%;"></span> ARTISANAL DESSERTS</li>
+                        <li style="display:flex; align-items:center; gap:12px; font-family:'Cinzel'; font-size:11px; color:var(--clr-secondary);"><span style="width:6px; height:6px; background:var(--clr-secondary); border-radius:50%;"></span> MOCKTAIL BARS</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Bespoke Enhancements -->
-    <section class="enhancements">
-        <div class="section-header reveal">
-            <h2 class="section-title text-center" style="font-size: 32px;">Bespoke Enhancements</h2>
-            <p class="text-center"
-                style="max-width: 600px; margin: 24px auto 48px auto; opacity: 0.8; font-size: 16px;">Elevate your
-                affair with these exquisite finishing touches, curated to provide that final layer of unforgettable
-                polish.</p>
-        </div>
-        <div class="enhancements-list reveal delay-1">
-            <span class="enhancement-tag">LIVE BAND</span>
-            <span class="enhancement-tag">PHOTO BOOTH</span>
-            <span class="enhancement-tag">VALET PARKING</span>
-            <span class="enhancement-tag">CIGAR LOUNGE SETUP</span>
-            <span class="enhancement-tag">FIREWORKS DISPLAY</span>
-            <span class="enhancement-tag">ICE SCULPTURES</span>
-            <span class="enhancement-tag">DRONE PHOTOGRAPHY</span>
-            <span class="enhancement-tag">STRING QUARTET</span>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="footer-container">
+        <div class="container footer-container">
             <div class="footer-brand">
-                <a href="index.html" class="logo-text">AMOR EVENTZ</a>
+                <img src="assets/amor-eventz-logo.png" alt="Amor Eventz" style="height: 90px; width: auto; margin-bottom: 20px;">
                 <p>Where Every Celebration Becomes a Legend.</p>
             </div>
             <div class="footer-links">
                 <h4>EXPLORE</h4>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Venue Map</a></li>
-                    <li><a href="#">Press Kit</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="venues.html">OUR VENUES</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="gallery.html">GALLERY</a></li>
                 </ul>
             </div>
             <div class="footer-social">
                 <h4>CONNECT</h4>
                 <div class="social-icons">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="18" cy="5" r="3"></circle>
-                        <circle cx="6" cy="12" r="3"></circle>
-                        <circle cx="18" cy="19" r="3"></circle>
-                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                    </svg>
+                    <a href="https://instagram.com/amoreventz" target="_blank" class="social-icon">IN</a>
+                    <a href="https://facebook.com/amoreventz" target="_blank" class="social-icon">FB</a>
+                    <a href="https://youtube.com/amoreventz" target="_blank" class="social-icon">YT</a>
+                    <a href="https://pinterest.com/amoreventz" target="_blank" class="social-icon">PT</a>
                 </div>
             </div>
             <div class="footer-newsletter">
                 <h4>NEWSLETTER</h4>
+                <p style="font-size:13px; color:#FAF3EC; opacity:0.7; margin-bottom:12px;">Subscribe for event inspiration & exclusive offers</p>
                 <form class="newsletter-form">
-                    <input type="email" placeholder="Your Email Address">
-                    <button type="submit">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </button>
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">JOIN</button>
                 </form>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Amor Eventz. Crafted for Royalty.</p>
+            <p>&copy; 2024 AMOR EVENTZ. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919800000000" target="_blank" class="whatsapp-float" title="Chat with us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
     <script src="script.js"></script>
 </body>
-
 </html>
