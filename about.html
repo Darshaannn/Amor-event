@@ -45,83 +45,105 @@
     </nav>
 
     <!-- HEADER -->
-    <header class="page-header" style="background-image: linear-gradient(rgba(59, 10, 30, 0.75), rgba(59, 10, 30, 0.75)), url('assets/multi-colored-art-crafts.jpg');">
+    <header class="page-header">
+        <div class="header-bg-zoom" style="background-image: linear-gradient(rgba(59, 10, 30, 0.75), rgba(59, 10, 30, 0.75)), url('assets/multi-colored-art-crafts.jpg');"></div>
         <div class="container text-center reveal">
-            <p class="txt-ui txt-gold">ESTABLISHED 2025</p>
+            <p class="txt-ui txt-gold" style="font-size: 11px; letter-spacing: 4px;">ESTABLISHED 2025</p>
             <h1 class="txt-hero" style="font-size:72px;" data-i18n="nav-about">AMOR EVENTZ</h1>
             <div class="divider-center" style="margin: 30px auto; width: 80px;"></div>
         </div>
     </header>
 
     <!-- FOUNDING STORY SECTION -->
-    <section class="section-light reveal" style="padding:140px 0;">
+    <section class="section-light reveal" style="padding:160px 0;">
         <div class="container" style="display:grid; grid-template-columns:1.2fr 1fr; gap:100px; align-items:center;">
             <div>
                 <p class="txt-ui txt-gold" style="margin-bottom:20px;">THE PHILOSOPHY</p>
-                <h2 class="txt-hero" style="font-size:52px; margin-bottom:40px;">Born from Passion, Defined by Love</h2>
-                <div class="txt-body" style="font-size:18px; line-height:2.0; color: #444;">
+                <h2 class="txt-hero" style="font-size:52px; margin-bottom:40px;">Born from Passion,<br>Defined by Love</h2>
+                <div class="txt-body" style="font-size:18px; line-height:2.0; color: #333;">
                     <p style="margin-bottom:30px;">Amor Eventz is a full-service event management company established in 2025, born out of a passion for creating unforgettable celebrations filled with love, elegance, and seamless execution.</p>
                     <p style="margin-bottom:30px;">True to our name <strong>“Amor”</strong>, meaning love, we believe every event tells a story and we are here to bring that story to life, beautifully and effortlessly. From intimate gatherings to grand celebrations, we specialize in planning and managing all kinds of events you wish to celebrate.</p>
                     <p>Whether it is a royal wedding, a milestone birthday, or a prestigious corporate gala, our experienced team pays attention to the smallest details, ensuring flawless execution from concept to completion.</p>
                 </div>
-                <div style="margin-top:40px; padding-left:30px; border-left:3px solid var(--clr-secondary); opacity: 0.8;">
-                    <p style="font-style:italic; font-size:22px; color:var(--clr-primary-bg); font-family: 'Playfair Display';">"We don't just host events; we preserve legacies through heartfelt dedication."</p>
-                    <p class="txt-ui" style="margin-top:12px; font-size: 11px;">— THE AMOR PROMISE</p>
+                <div style="margin-top:50px; padding-left:40px; border-left:4px solid var(--clr-secondary); position: relative;">
+                    <i class="fas fa-quote-left" style="position: absolute; left: 10px; top: -10px; font-size: 32px; color: var(--clr-secondary); opacity: 0.15;"></i>
+                    <p style="font-style:italic; font-size:24px; color:var(--clr-primary-bg); font-family: 'Playfair Display'; line-height: 1.5;">"We don't just host events; we preserve legacies through heartfelt dedication."</p>
+                    <p class="txt-ui" style="margin-top:15px; font-size: 11px;">— THE AMOR PROMISE</p>
                 </div>
             </div>
             <div style="position:relative;">
-                <img src="assets/about_heritage_hallway.png" alt="Heritage Hallway" style="width:100%; height:600px; object-fit:cover; filter: brightness(0.95);">
-                <div style="position:absolute; inset:0; border:1px solid #D4AF6A; transform:translate(-25px, 25px); pointer-events:none; z-index:-1;"></div>
+                <div style="overflow: hidden;">
+                    <img src="assets/about_heritage_hallway.png" alt="Heritage Hallway" style="width:100%; height:650px; object-fit:cover; transition: transform 2s ease;">
+                </div>
+                <div style="position:absolute; inset:0; border:1px solid #D4AF6A; transform:translate(-30px, 30px); pointer-events:none; z-index:-1; opacity: 0.5;"></div>
+                <div style="position:absolute; right: -40px; bottom: -40px; background: var(--clr-primary-bg); padding: 40px; border: 1px solid var(--clr-secondary); color: #fff;">
+                    <p class="txt-ui txt-gold" style="margin:0; font-size: 28px; font-family: 'Playfair Display';">15+</p>
+                    <p style="margin:0; font-size: 9px; letter-spacing: 2px; opacity: 0.7;">YEARS OF EXPERTISE</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- THE ELITE NETWORK SECTION -->
-    <section class="section-dark reveal" style="padding:140px 0; background-color: #2D0817;">
+    <section class="section-dark reveal" style="padding:160px 0; background-attachment: fixed; background-image: linear-gradient(rgba(45, 8, 23, 0.96), rgba(45, 8, 23, 0.96)), url('assets/venue_grand_ballroom.png'); background-size: cover;">
         <div class="container" style="max-width: 1600px;">
-            <div class="text-center" style="margin-bottom:80px;">
-                <p class="txt-ui txt-gold" style="margin-bottom:12px;">UNMATCHED CAPABILITY</p>
-                <h2 class="txt-hero" style="font-size:48px;">The Elite Network</h2>
-                <div class="divider-center" style="margin: 25px auto; width: 60px;"></div>
+            <div class="text-center" style="margin-bottom:100px;">
+                <p class="txt-ui txt-gold" style="margin-bottom:15px; letter-spacing: 5px;">UNMATCHED CAPABILITY</p>
+                <h2 class="txt-hero" style="font-size:56px;">The Elite Network</h2>
+                <div class="divider-center" style="margin: 30px auto; width: 60px;"></div>
             </div>
 
-            <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:30px;">
-                <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(212,175,106,0.1); padding:60px 30px; text-align:center;">
-                    <h3 style="font-size:42px; color:var(--clr-secondary); font-family: 'Playfair Display'; margin-bottom:15px;">50+</h3>
-                    <p style="font-size:12px; letter-spacing:2px; font-weight: 500;">VENUE OPTIONS</p>
-                    <p style="font-size:14px; opacity: 0.6; margin-top: 15px; line-height: 1.6;">Across prime locations to suit every scale and style.</p>
+            <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:40px;">
+                <div class="glass-card" style="padding:80px 40px; text-align:center;">
+                    <h3 style="font-size:48px; color:var(--clr-secondary); font-family: 'Playfair Display'; margin-bottom:15px;">
+                        <span class="counter" data-target="50" data-suffix="+">0+</span>
+                    </h3>
+                    <p style="font-size:13px; letter-spacing:3px; font-weight: 500; text-transform: uppercase;">Venue Options</p>
+                    <div style="width:30px; height:1px; background:rgba(212,175,106,0.3); margin: 25px auto;"></div>
+                    <p style="font-size:14px; opacity: 0.6; line-height: 1.7;">Across prime locations to suit every scale and luxury style.</p>
                 </div>
-                <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(212,175,106,0.1); padding:60px 30px; text-align:center;">
-                    <h3 style="font-size:42px; color:var(--clr-secondary); font-family: 'Playfair Display'; margin-bottom:15px;">50+</h3>
-                    <p style="font-size:12px; letter-spacing:2px; font-weight: 500;">CATERING PARTNERS</p>
-                    <p style="font-size:14px; opacity: 0.6; margin-top: 15px; line-height: 1.6;">Diverse cuisines and artisanal customizable menus.</p>
+                <div class="glass-card" style="padding:80px 40px; text-align:center;">
+                    <h3 style="font-size:48px; color:var(--clr-secondary); font-family: 'Playfair Display'; margin-bottom:15px;">
+                        <span class="counter" data-target="50" data-suffix="+">0+</span>
+                    </h3>
+                    <p style="font-size:13px; letter-spacing:3px; font-weight: 500; text-transform: uppercase;">Catering Partners</p>
+                    <div style="width:30px; height:1px; background:rgba(212,175,106,0.3); margin: 25px auto;"></div>
+                    <p style="font-size:14px; opacity: 0.6; line-height: 1.7;">Diverse cuisines and artisanal customizable menu selections.</p>
                 </div>
-                <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(212,175,106,0.1); padding:60px 30px; text-align:center;">
-                    <i class="fas fa-wand-magic-sparkles" style="font-size:32px; color:var(--clr-secondary); margin-bottom:20px;"></i>
-                    <p style="font-size:12px; letter-spacing:2px; font-weight: 500;">ELITE DÉCOR</p>
-                    <p style="font-size:14px; opacity: 0.6; margin-top: 15px; line-height: 1.6;">Professional makeup artists and theme-driven styling.</p>
+                <div class="glass-card" style="padding:80px 40px; text-align:center;">
+                    <div style="margin-bottom:30px;">
+                        <i class="fas fa-wand-magic-sparkles" style="font-size:42px; color:var(--clr-secondary); opacity: 0.8;"></i>
+                    </div>
+                    <p style="font-size:13px; letter-spacing:3px; font-weight: 500; text-transform: uppercase;">Elite Décor</p>
+                    <div style="width:30px; height:1px; background:rgba(212,175,106,0.3); margin: 25px auto;"></div>
+                    <p style="font-size:14px; opacity: 0.6; line-height: 1.7;">Professional makeup artists and theme-driven royal styling.</p>
                 </div>
-                <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(212,175,106,0.1); padding:60px 30px; text-align:center;">
-                    <i class="fas fa-users-cog" style="font-size:32px; color:var(--clr-secondary); margin-bottom:20px;"></i>
-                    <p style="font-size:12px; letter-spacing:2px; font-weight: 500;">SUPPORT STAFF</p>
-                    <p style="font-size:14px; opacity: 0.6; margin-top: 15px; line-height: 1.6;">Trained professionals for seamless on-ground coordination.</p>
+                <div class="glass-card" style="padding:80px 40px; text-align:center;">
+                    <div style="margin-bottom:30px;">
+                        <i class="fas fa-users-viewfinder" style="font-size:42px; color:var(--clr-secondary); opacity: 0.8;"></i>
+                    </div>
+                    <p style="font-size:13px; letter-spacing:3px; font-weight: 500; text-transform: uppercase;">Expert Staff</p>
+                    <div style="width:30px; height:1px; background:rgba(212,175,106,0.3); margin: 25px auto;"></div>
+                    <p style="font-size:14px; opacity: 0.6; line-height: 1.7;">Trained professionals for seamless on-ground orchestration.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- STRATEGIC VISION SECTION -->
-    <section class="section-light reveal" style="padding:140px 0;">
-        <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:80px;">
-            <div style="padding:60px; border:1px solid rgba(59, 10, 30, 0.1); background:#fff;">
-                <p class="txt-ui txt-gold" style="margin-bottom:15px;">MISSION</p>
-                <h3 style="font-size:32px; margin-bottom:25px;">Transforming Ideas into Extraordinary Experiences</h3>
-                <p style="font-size:17px; line-height:1.8; color:#555;">Our mission is to deliver personalized, stress-free, and high-quality event management services. We aim to create moments that are not just celebrated, but cherished for a lifetime, driven by creativity, professionalism, and heartfelt dedication.</p>
+    <section class="section-light reveal" style="padding:160px 0;">
+        <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:100px;">
+            <div style="padding:80px; border:1px solid rgba(59, 10, 30, 0.08); background:#fff; position: relative; overflow: hidden;">
+                <p class="txt-ui txt-gold" style="margin-bottom:20px; letter-spacing: 3px;">OUR MISSION</p>
+                <h3 style="font-size:36px; margin-bottom:30px; line-height: 1.2;">Transforming Ideas into Extraordinary Experiences</h3>
+                <p style="font-size:17px; line-height:1.9; color:#555;">Our mission is to deliver personalized, stress-free, and high-quality event management services. We aim to create moments that are not just celebrated, but cherished for a lifetime, driven by creativity, professionalism, and heartfelt dedication.</p>
+                <i class="fas fa-bullseye" style="position: absolute; right: -20px; bottom: -20px; font-size: 120px; color: var(--clr-primary-bg); opacity: 0.03;"></i>
             </div>
-            <div style="padding:60px; border:1px solid rgba(59, 10, 30, 0.1); background:#fff;">
-                <p class="txt-ui txt-gold" style="margin-bottom:15px;">VISION</p>
-                <h3 style="font-size:32px; margin-bottom:25px;">Setting the Standard for Celebration Royale</h3>
-                <p style="font-size:17px; line-height:1.8; color:#555;">We aspire to be a trusted and leading name in the event management industry, known for innovation, reliability, and excellence. We set new standards by embraces new trends and crafting events that reflect love, joy, and perfection.</p>
+            <div style="padding:80px; border:1px solid rgba(59, 10, 30, 0.08); background:#fff; position: relative; overflow: hidden;">
+                <p class="txt-ui txt-gold" style="margin-bottom:20px; letter-spacing: 3px;">OUR VISION</p>
+                <h3 style="font-size:36px; margin-bottom:30px; line-height: 1.2;">Setting the Standard for Celebration Royale</h3>
+                <p style="font-size:17px; line-height:1.9; color:#555;">We aspire to be a trusted and leading name in the event management industry, known for innovation, reliability, and excellence. We set new standards by embraces new trends and crafting events that reflect love, joy, and perfection.</p>
+                <i class="fas fa-eye" style="position: absolute; right: -20px; bottom: -20px; font-size: 120px; color: var(--clr-primary-bg); opacity: 0.03;"></i>
             </div>
         </div>
     </section>
