@@ -10,32 +10,6 @@
     <meta name="description" content="Transparent luxury pricing for your grand celebrations. Explore our Royal, Imperial, and Sovereign event packages curated for excellence.">
     <link rel="stylesheet" href="styles.css">
     
-    <style>
-        .pricing-section { padding: 120px 0; background: #FAF3EC; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; align-items: stretch; }
-        .pricing-card { 
-            background: #fff; border: 1px solid rgba(212,175,106,0.2); padding: 60px 40px; 
-            text-align: center; transition: all 0.4s ease; display: flex; flex-direction: column;
-        }
-        .pricing-card.featured { 
-            background: var(--clr-primary); color: var(--clr-ivory); border-color: var(--clr-secondary);
-            transform: scale(1.05); z-index: 2; box-shadow: 0 30px 60px rgba(0,0,0,0.15);
-        }
-        .tier-label { font-family: 'Cinzel'; font-size: 12px; letter-spacing: 3px; color: var(--clr-secondary); margin-bottom: 20px; }
-        .tier-price { font-family: 'Playfair Display'; font-size: 42px; margin-bottom: 30px; }
-        .tier-price span { font-size: 14px; font-family: 'Lora'; opacity: 0.7; }
-        .pricing-features { list-style: none; padding: 0; margin: 40px 0 auto; text-align: left; }
-        .pricing-features li { 
-            margin-bottom: 16px; font-size: 14px; position: relative; padding-left: 25px;
-            border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 12px;
-        }
-        .pricing-card.featured .pricing-features li { border-color: rgba(250,243,236,0.1); }
-        .pricing-features li::before { 
-            content: '▫'; position: absolute; left: 0; color: var(--clr-secondary); font-size: 18px; top: -2px;
-        }
-        .pricing-card.featured .btn-outline { border-color: var(--clr-secondary); color: var(--clr-ivory); }
-        .pricing-card.featured .btn-outline:hover { background: var(--clr-secondary); color: var(--clr-primary); }
-    </style>
 </head>
 <body>
 
@@ -43,36 +17,43 @@
     <nav class="navbar scrolled">
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html"><img src="assets/amor-eventz-logo.png" alt="Amor Eventz" style="height: 50px; width: auto;"></a>
+                <a href="index.html"><img src="assets/logo.png" alt="Amor Eventz" style="height: 75px; width: auto;"></a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="venues.html">VENUES</a></li>
-                <li><a href="services.html">SERVICES</a></li>
-                <li><a href="pricing.html" class="active">PRICING</a></li>
-                <li><a href="gallery.html">GALLERY</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="index.html" data-i18n="nav-home">HOME</a></li>
+                <li><a href="about.html" data-i18n="nav-about">ABOUT</a></li>
+                <li><a href="venues.html" data-i18n="nav-venues">VENUES</a></li>
+                <li><a href="services.html" data-i18n="nav-services">SERVICES</a></li>
+                <li><a href="pricing.html" class="active" data-i18n="nav-pricing">PRICING</a></li>
+                <li><a href="gallery.html" data-i18n="nav-gallery">GALLERY</a></li>
+                <li><a href="contact.html" data-i18n="nav-contact">CONTACT</a></li>
             </ul>
-            <a href="contact.html" class="btn btn-primary" style="font-family:'Cinzel',serif;font-size:11px;">RESERVE NOW</a>
+            <div class="nav-actions">
+                <div class="lang-switcher">
+                    <span class="lang-btn active" data-lang="en">EN</span>
+                    <span class="lang-divider"></span>
+                    <span class="lang-btn" data-lang="hi">HI</span>
+                </div>
+                <a href="contact.html" class="nav-btn" data-i18n="nav-reserve">RESERVE NOW</a>
+            </div>
         </div>
     </nav>
 
     <!-- HEADER -->
-    <header class="page-header" style="background-image: linear-gradient(rgba(59, 10, 30, 0.7), rgba(59, 10, 30, 0.7)), url('https://images.unsplash.com/photo-1519225421980-7e0bdbe02a72?w=1600&q=80');">
+    <header class="page-header" style="background-image: linear-gradient(rgba(59, 10, 30, 0.75), rgba(59, 10, 30, 0.75)), url('assets/hero (1).jpg');">
         <div class="container text-center reveal">
-            <p style="font-family:'Cinzel'; letter-spacing:4px; font-size:12px; color:var(--clr-secondary);">INVESTMENT GUIDE</p>
-            <h1 style="font-family:'Cormorant Garamond'; font-style:italic; font-size:72px;">Packages</h1>
+            <p class="txt-ui txt-gold">INVESTMENT GUIDE</p>
+            <h1 class="txt-hero" style="font-size:72px;" data-i18n="nav-pricing">Packages</h1>
             <div class="divider-center" style="margin: 30px auto; width: 80px;"></div>
         </div>
     </header>
 
     <!-- PRICING TIERS -->
-    <section class="pricing-section reveal">
+    <section class="pricing-section section-light reveal">
         <div class="container">
             <div style="text-align:center; margin-bottom:80px;">
-                <h2 style="font-family:'Cormorant Garamond'; font-style:italic; font-size:48px; color:var(--clr-primary);">Tailored Excellence for Every Celebration</h2>
-                <p style="max-width:600px; margin:20px auto; opacity:0.8;">Choose a foundation for your event, which our curators will then customize to your unique vision and requirements.</p>
+                <h2 class="txt-hero" style="font-size:48px; margin-bottom:20px;">Tailored Excellence for Every Celebration</h2>
+                <p class="txt-body" style="max-width:600px; margin:20px auto; opacity:0.8;">Choose a foundation for your event, which our curators will then customize to your unique vision and requirements.</p>
             </div>
 
             <div class="pricing-grid">
@@ -107,7 +88,7 @@
                         <li>Valet Parking Service</li>
                     </ul>
                     <div style="margin-top:40px;">
-                        <a href="contact.html" class="btn btn-primary" style="width:100%; border-radius:1px; background:var(--clr-secondary); color:var(--clr-primary);">RESERVE IMPERIAL</a>
+                        <a href="contact.html" class="btn btn-primary" style="width:100%; border-radius:1px;">RESERVE IMPERIAL</a>
                     </div>
                 </div>
 
@@ -136,20 +117,20 @@
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-brand">
-                <img src="assets/amor-eventz-logo.png" alt="Amor Eventz" style="height: 90px; width: auto; margin-bottom: 20px;">
-                <p>Where Every Celebration Becomes a Legend.</p>
+                <img src="assets/logo.png" alt="Amor Eventz" style="height: 120px; width: auto; margin-bottom: 25px;">
+                <p data-i18n="footer-tagline">Where Every Celebration Becomes a Legend.</p>
             </div>
             <div class="footer-links">
-                <h4>EXPLORE</h4>
+                <h4 data-i18n="footer-explore">EXPLORE</h4>
                 <ul>
-                    <li><a href="about.html">ABOUT US</a></li>
-                    <li><a href="venues.html">OUR VENUES</a></li>
-                    <li><a href="services.html">SERVICES</a></li>
-                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a href="about.html" data-i18n="nav-about">ABOUT US</a></li>
+                    <li><a href="venues.html" data-i18n="nav-venues">OUR VENUES</a></li>
+                    <li><a href="services.html" data-i18n="nav-services">SERVICES</a></li>
+                    <li><a href="gallery.html" data-i18n="nav-gallery">GALLERY</a></li>
                 </ul>
             </div>
             <div class="footer-social">
-                <h4>CONNECT</h4>
+                <h4 data-i18n="footer-connect">CONNECT</h4>
                 <div class="social-icons">
                     <a href="https://instagram.com/amoreventz" target="_blank" class="social-icon">IN</a>
                     <a href="https://facebook.com/amoreventz" target="_blank" class="social-icon">FB</a>
@@ -158,16 +139,16 @@
                 </div>
             </div>
             <div class="footer-newsletter">
-                <h4>NEWSLETTER</h4>
-                <p style="font-size:13px; color:#FAF3EC; opacity:0.7; margin-bottom:12px;">Subscribe for event inspiration & exclusive offers</p>
+                <h4 data-i18n="footer-newsletter">NEWSLETTER</h4>
+                <p style="font-size:13px; color:#FAF3EC; opacity:0.7; margin-bottom:12px;" data-i18n="footer-newsletter-p">Subscribe for event inspiration & exclusive offers</p>
                 <form class="newsletter-form">
                     <input type="email" placeholder="Your email address">
-                    <button type="submit">JOIN</button>
+                    <button type="submit" data-i18n="footer-join">JOIN</button>
                 </form>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 AMOR EVENTZ. ALL RIGHTS RESERVED.</p>
+            <p data-i18n="footer-rights">&copy; 2024 AMOR EVENTZ. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 

@@ -15,20 +15,6 @@
     <meta property="og:description" content="Crafting sovereign editorial experiences since 2009. Learn about our founding vision and commitment to elegance.">
 
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .timeline-container { padding: 80px 0; background: var(--clr-primary); color: var(--clr-ivory); }
-        .timeline { position: relative; max-width: 800px; margin: 0 auto; padding: 40px 0; }
-        .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: rgba(212,175,106,0.3); }
-        .timeline-item { position: relative; margin-bottom: 60px; width: 50%; padding: 0 40px; }
-        .timeline-item:nth-child(odd) { left: 0; text-align: right; }
-        .timeline-item:nth-child(even) { left: 50%; text-align: left; }
-        .timeline-dot { position: absolute; top: 0; width: 12px; height: 12px; background: var(--clr-secondary); border-radius: 50%; z-index: 2; }
-        .timeline-item:nth-child(odd) .timeline-dot { right: -6px; }
-        .timeline-item:nth-child(even) .timeline-dot { left: -6px; }
-        .timeline-year { font-family: 'Cinzel'; font-size: 24px; color: var(--clr-secondary); margin-bottom: 8px; display: block; }
-        .timeline-content h3 { font-family: 'Playfair Display'; font-size: 18px; margin-bottom: 12px; }
-        .timeline-content p { font-size: 14px; opacity: 0.8; line-height: 1.6; }
-    </style>
 </head>
 <body>
 
@@ -36,43 +22,50 @@
     <nav class="navbar scrolled">
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html"><img src="assets/amor-eventz-logo.png" alt="Amor Eventz" style="height: 50px; width: auto;"></a>
+                <a href="index.html"><img src="assets/logo.png" alt="Amor Eventz" style="height: 75px; width: auto;"></a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html" class="active">ABOUT</a></li>
-                <li><a href="venues.html">VENUES</a></li>
-                <li><a href="services.html">SERVICES</a></li>
-                <li><a href="pricing.html">PRICING</a></li>
-                <li><a href="gallery.html">GALLERY</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="index.html" data-i18n="nav-home">HOME</a></li>
+                <li><a href="about.html" class="active" data-i18n="nav-about">ABOUT</a></li>
+                <li><a href="venues.html" data-i18n="nav-venues">VENUES</a></li>
+                <li><a href="services.html" data-i18n="nav-services">SERVICES</a></li>
+                <li><a href="pricing.html" data-i18n="nav-pricing">PRICING</a></li>
+                <li><a href="gallery.html" data-i18n="nav-gallery">GALLERY</a></li>
+                <li><a href="contact.html" data-i18n="nav-contact">CONTACT</a></li>
             </ul>
-            <a href="contact.html" class="btn btn-primary" style="font-family:'Cinzel',serif;font-size:11px;">RESERVE NOW</a>
+            <div class="nav-actions">
+                <div class="lang-switcher">
+                    <span class="lang-btn active" data-lang="en">EN</span>
+                    <span class="lang-divider"></span>
+                    <span class="lang-btn" data-lang="hi">HI</span>
+                </div>
+                <a href="contact.html" class="nav-btn" data-i18n="nav-reserve">RESERVE NOW</a>
+            </div>
         </div>
     </nav>
 
     <!-- HEADER -->
-    <header class="page-header" style="background-image: linear-gradient(rgba(59, 10, 30, 0.7), rgba(59, 10, 30, 0.7)), url('assets/hero (3).jpg');">
+    <header class="page-header" style="background-image: linear-gradient(rgba(59, 10, 30, 0.75), rgba(59, 10, 30, 0.75)), url('assets/multi-colored-art-crafts.jpg');">
         <div class="container text-center reveal">
-            <p style="font-family:'Cinzel'; letter-spacing:4px; font-size:12px; color:var(--clr-secondary);">ESTABLISHED 2009</p>
-            <h1 style="font-family:'Cormorant Garamond'; font-style:italic; font-size:72px;">Our Legacy</h1>
+            <p class="txt-ui txt-gold">ESTABLISHED 2009</p>
+            <h1 class="txt-hero" style="font-size:72px;" data-i18n="nav-about">Our Legacy</h1>
             <div class="divider-center" style="margin: 30px auto; width: 80px;"></div>
         </div>
     </header>
 
     <!-- FOUNDING STORY SECTION -->
-    <section style="padding:120px 0; background:#FAF3EC;" class="reveal">
+    <section class="section-light reveal" style="padding:120px 0;">
         <div class="container" style="display:grid; grid-template-columns:1.2fr 1fr; gap:100px; align-items:center;">
             <div>
-                <p style="font-family:'Cinzel',serif; font-size:12px; letter-spacing:0.2em; color:#C9956A; margin-bottom:20px;">THE GENESIS</p>
-                <h2 style="font-family:'Cormorant Garamond'; font-style:italic; font-size:52px; color:#1A1A1A; margin-bottom:40px;">Where Elegance Meets Extraordinary</h2>
-                <div style="font-family:'Lora'; font-size:18px; color:#444; line-height:1.8;">
+                <p class="txt-ui txt-gold" style="margin-bottom:20px;">THE GENESIS</p>
+                <h2 class="txt-hero" style="font-size:52px; margin-bottom:40px;">Where Elegance Meets Extraordinary</h2>
+                <div class="txt-body" style="font-size:18px; line-height:1.8;">
                     <p style="margin-bottom:30px;">Amor Eventz was born from a singular vision: to create a stage where life's most precious celebrations are treated with the reverence of history. What began as a bespoke wedding curation boutique in 2009 has evolved into a sovereign collection of heritage-inspired venues.</p>
                     <p>Every chandelier, every silk drape, and every carved archway in our halls is a testament to our commitment to timeless luxury. We don't just host events; we preserve legacies through meticulous attention to detail and unmatched hospitality.</p>
                 </div>
                 <div style="margin-top:40px; padding-left:30px; border-left:2px solid var(--clr-secondary);">
-                    <p style="font-style:italic; font-size:20px; color:var(--clr-primary);">"True luxury is found in the meticulous attention to the unseen details."</p>
-                    <p style="font-family:'Cinzel'; font-size:11px; margin-top:10px;">— FOUNDING PHILOSOPHY</p>
+                    <p style="font-style:italic; font-size:20px; color:var(--clr-primary-bg);">"True luxury is found in the meticulous attention to the unseen details."</p>
+                    <p class="txt-ui" style="margin-top:10px;">— FOUNDING PHILOSOPHY</p>
                 </div>
             </div>
             <div style="position:relative;">
@@ -86,7 +79,7 @@
     <section class="timeline-container reveal">
         <div class="container">
             <div class="text-center" style="margin-bottom:80px;">
-                <p style="font-family:'Cinzel'; letter-spacing:3px; color:var(--clr-secondary);">THE JOURNEY</p>
+                <p class="txt-ui txt-gold">THE JOURNEY</p>
                 <h2 style="font-size:48px;">Milestones of Excellence</h2>
             </div>
             
@@ -139,20 +132,20 @@
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-brand">
-                <img src="assets/amor-eventz-logo.png" alt="Amor Eventz" style="height: 90px; width: auto; margin-bottom: 20px;">
-                <p>Where Every Celebration Becomes a Legend.</p>
+                <img src="assets/logo.png" alt="Amor Eventz" style="height: 120px; width: auto; margin-bottom: 25px;">
+                <p data-i18n="footer-tagline">Where Every Celebration Becomes a Legend.</p>
             </div>
             <div class="footer-links">
-                <h4>EXPLORE</h4>
+                <h4 data-i18n="footer-explore">EXPLORE</h4>
                 <ul>
-                    <li><a href="about.html">ABOUT US</a></li>
-                    <li><a href="venues.html">OUR VENUES</a></li>
-                    <li><a href="services.html">SERVICES</a></li>
-                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a href="about.html" data-i18n="nav-about">ABOUT US</a></li>
+                    <li><a href="venues.html" data-i18n="nav-venues">OUR VENUES</a></li>
+                    <li><a href="services.html" data-i18n="nav-services">SERVICES</a></li>
+                    <li><a href="gallery.html" data-i18n="nav-gallery">GALLERY</a></li>
                 </ul>
             </div>
             <div class="footer-social">
-                <h4>CONNECT</h4>
+                <h4 data-i18n="footer-connect">CONNECT</h4>
                 <div class="social-icons">
                     <a href="https://instagram.com/amoreventz" target="_blank" class="social-icon">IN</a>
                     <a href="https://facebook.com/amoreventz" target="_blank" class="social-icon">FB</a>
@@ -161,16 +154,16 @@
                 </div>
             </div>
             <div class="footer-newsletter">
-                <h4>NEWSLETTER</h4>
-                <p style="font-size:13px; color:#FAF3EC; opacity:0.7; margin-bottom:12px;">Subscribe for event inspiration & exclusive offers</p>
+                <h4 data-i18n="footer-newsletter">NEWSLETTER</h4>
+                <p style="font-size:13px; color:#FAF3EC; opacity:0.7; margin-bottom:12px;" data-i18n="footer-newsletter-p">Subscribe for event inspiration & exclusive offers</p>
                 <form class="newsletter-form">
                     <input type="email" placeholder="Your email address">
-                    <button type="submit">JOIN</button>
+                    <button type="submit" data-i18n="footer-join">JOIN</button>
                 </form>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 AMOR EVENTZ. ALL RIGHTS RESERVED.</p>
+            <p data-i18n="footer-rights">&copy; 2024 AMOR EVENTZ. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 

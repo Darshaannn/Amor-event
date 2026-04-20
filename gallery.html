@@ -10,30 +10,6 @@
     <meta name="description" content="Witness the magic of Amor Eventz. A curated gallery of royal weddings, grand corporate galas, and bespoke event decor.">
     <link rel="stylesheet" href="styles.css">
     
-    <style>
-        .gallery-nav { padding: 40px 0; display: flex; justify-content: center; gap: 30px; background: #FAF3EC; }
-        .gallery-filter { 
-            font-family: 'Cinzel'; font-size: 11px; letter-spacing: 2px; color: #888; cursor: pointer; 
-            transition: color 0.3s ease; border-bottom: 1px solid transparent; padding-bottom: 5px;
-        }
-        .gallery-filter.active { color: var(--clr-primary); border-color: var(--clr-secondary); }
-        
-        .gallery-mosaic { 
-            display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 300px; gap: 20px; 
-            padding: 80px 0; background: #FAF3EC;
-        }
-        .gallery-item { position: relative; overflow: hidden; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-        .gallery-item:hover img { transform: scale(1.1); }
-        .gallery-item::after { 
-            content: ''; position: absolute; inset: 0; background: rgba(59,10,30,0.4); 
-            opacity: 0; transition: opacity 0.4s ease; 
-        }
-        .gallery-item:hover::after { opacity: 1; }
-        
-        .span-2 { grid-column: span 2; }
-        .row-2 { grid-row: span 2; }
-    </style>
 </head>
 <body>
 
@@ -41,32 +17,39 @@
     <nav class="navbar scrolled">
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html"><img src="assets/amor-eventz-logo.png" alt="Amor Eventz" style="height: 50px; width: auto;"></a>
+                <a href="index.html"><img src="assets/logo.png" alt="Amor Eventz" style="height: 75px; width: auto;"></a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="venues.html">VENUES</a></li>
-                <li><a href="services.html">SERVICES</a></li>
-                <li><a href="pricing.html">PRICING</a></li>
-                <li><a href="gallery.html" class="active">GALLERY</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="index.html" data-i18n="nav-home">HOME</a></li>
+                <li><a href="about.html" data-i18n="nav-about">ABOUT</a></li>
+                <li><a href="venues.html" data-i18n="nav-venues">VENUES</a></li>
+                <li><a href="services.html" data-i18n="nav-services">SERVICES</a></li>
+                <li><a href="pricing.html" data-i18n="nav-pricing">PRICING</a></li>
+                <li><a href="gallery.html" class="active" data-i18n="nav-gallery">GALLERY</a></li>
+                <li><a href="contact.html" data-i18n="nav-contact">CONTACT</a></li>
             </ul>
-            <a href="contact.html" class="btn btn-primary" style="font-family:'Cinzel',serif;font-size:11px;">RESERVE NOW</a>
+            <div class="nav-actions">
+                <div class="lang-switcher">
+                    <span class="lang-btn active" data-lang="en">EN</span>
+                    <span class="lang-divider"></span>
+                    <span class="lang-btn" data-lang="hi">HI</span>
+                </div>
+                <a href="contact.html" class="nav-btn" data-i18n="nav-reserve">RESERVE NOW</a>
+            </div>
         </div>
     </nav>
 
     <!-- HEADER -->
-    <header class="page-header" style="background-image: linear-gradient(rgba(59, 10, 30, 0.7), rgba(59, 10, 30, 0.7)), url('https://images.unsplash.com/photo-1519225421980-7e0bdbe02a72?w=1600&q=80');">
+    <header class="page-header" style="background-image: linear-gradient(rgba(59, 10, 30, 0.75), rgba(59, 10, 30, 0.75)), url('assets/stunning-wedding-stage-decoration-design-with-flowers-fabric-wedding-ceremony.jpg');">
         <div class="container text-center reveal">
-            <p style="font-family:'Cinzel'; letter-spacing:4px; font-size:12px; color:var(--clr-secondary);">CAPTURED MOMENTS</p>
-            <h1 style="font-family:'Cormorant Garamond'; font-style:italic; font-size:72px;">The Gallery</h1>
+            <p class="txt-ui txt-gold">CAPTURED MOMENTS</p>
+            <h1 class="txt-hero" style="font-size:72px;" data-i18n="nav-gallery">The Gallery</h1>
             <div class="divider-center" style="margin: 30px auto; width: 80px;"></div>
         </div>
     </header>
 
     <!-- GALLERY NAV -->
-    <section class="gallery-nav reveal">
+    <section class="gallery-nav section-light reveal">
         <span class="gallery-filter active">ALL</span>
         <span class="gallery-filter">WEDDINGS</span>
         <span class="gallery-filter">CORPORATE</span>
@@ -75,31 +58,31 @@
     </section>
 
     <!-- MOSAIC GRID -->
-    <section class="container" style="background:#FAF3EC;">
-        <div class="gallery-mosaic">
+    <section class="section-light" style="padding:0">
+        <div class="container gallery-mosaic">
             <div class="gallery-item span-2 row-2 reveal">
-                <img src="https://images.unsplash.com/photo-1519225421980-7e0bdbe02a72?w=1200&q=80" alt="Wedding Hall">
+                <img src="assets/luxury-wedding-stage-decoration.jpg" alt="Wedding Hall">
             </div>
             <div class="gallery-item reveal delay-1">
-                <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&q=80" alt="Decor Detail">
+                <img src="assets/haldi-background-indian-wedding-time-haldi-ceremony.jpg" alt="Decor Detail">
             </div>
             <div class="gallery-item reveal delay-2">
-                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80" alt="Gala Setup">
+                <img src="assets/birthday-celebratory-toast-with-string-lights-champagne-silhouettes.jpg" alt="Gala Setup">
             </div>
             <div class="gallery-item row-2 reveal delay-3">
-                <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&q=80" alt="Arched Entrance">
+                <img src="assets/indian-stage-with-neon-light-night.jpg" alt="Arched Entrance">
             </div>
             <div class="gallery-item reveal delay-1">
-                <img src="https://images.unsplash.com/photo-1555244162-803834f70033?w=600&q=80" alt="Catering Spread">
+                <img src="assets/catering-wedding.jpg" alt="Catering Spread">
             </div>
             <div class="gallery-item span-2 reveal delay-2">
-                <img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=1200&q=80" alt="Outdoor View">
+                <img src="assets/multi-colored-art-crafts.jpg" alt="Outdoor View">
             </div>
             <div class="gallery-item reveal">
-                <img src="https://images.unsplash.com/photo-1519225421980-7e0bdbe02a72?w=600&q=80" alt="Interior Details">
+                <img src="assets/photo-is-must-everyday-work-ai-generated-best-wonderful-photo.jpg" alt="Interior Details">
             </div>
             <div class="gallery-item reveal delay-1">
-                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80" alt="Lounge Area">
+                <img src="assets/hero (3).jpg" alt="Lounge Area">
             </div>
         </div>
     </section>
@@ -108,20 +91,20 @@
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-brand">
-                <img src="assets/amor-eventz-logo.png" alt="Amor Eventz" style="height: 90px; width: auto; margin-bottom: 20px;">
-                <p>Where Every Celebration Becomes a Legend.</p>
+                <img src="assets/logo.png" alt="Amor Eventz" style="height: 120px; width: auto; margin-bottom: 25px;">
+                <p data-i18n="footer-tagline">Where Every Celebration Becomes a Legend.</p>
             </div>
             <div class="footer-links">
-                <h4>EXPLORE</h4>
+                <h4 data-i18n="footer-explore">EXPLORE</h4>
                 <ul>
-                    <li><a href="about.html">ABOUT US</a></li>
-                    <li><a href="venues.html">OUR VENUES</a></li>
-                    <li><a href="services.html">SERVICES</a></li>
-                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a href="about.html" data-i18n="nav-about">ABOUT US</a></li>
+                    <li><a href="venues.html" data-i18n="nav-venues">OUR VENUES</a></li>
+                    <li><a href="services.html" data-i18n="nav-services">SERVICES</a></li>
+                    <li><a href="gallery.html" data-i18n="nav-gallery">GALLERY</a></li>
                 </ul>
             </div>
             <div class="footer-social">
-                <h4>CONNECT</h4>
+                <h4 data-i18n="footer-connect">CONNECT</h4>
                 <div class="social-icons">
                     <a href="https://instagram.com/amoreventz" target="_blank" class="social-icon">IN</a>
                     <a href="https://facebook.com/amoreventz" target="_blank" class="social-icon">FB</a>
@@ -130,16 +113,16 @@
                 </div>
             </div>
             <div class="footer-newsletter">
-                <h4>NEWSLETTER</h4>
-                <p style="font-size:13px; color:#FAF3EC; opacity:0.7; margin-bottom:12px;">Subscribe for event inspiration & exclusive offers</p>
+                <h4 data-i18n="footer-newsletter">NEWSLETTER</h4>
+                <p style="font-size:13px; color:#FAF3EC; opacity:0.7; margin-bottom:12px;" data-i18n="footer-newsletter-p">Subscribe for event inspiration & exclusive offers</p>
                 <form class="newsletter-form">
                     <input type="email" placeholder="Your email address">
-                    <button type="submit">JOIN</button>
+                    <button type="submit" data-i18n="footer-join">JOIN</button>
                 </form>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 AMOR EVENTZ. ALL RIGHTS RESERVED.</p>
+            <p data-i18n="footer-rights">&copy; 2024 AMOR EVENTZ. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 

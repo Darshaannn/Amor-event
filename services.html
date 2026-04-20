@@ -10,20 +10,6 @@
     <meta name="description" content="Explore our bespoke event services: from gourmet catering and floral design to royal wedding planning and corporate event curation.">
     <link rel="stylesheet" href="styles.css">
     
-    <style>
-        .service-intro { padding: 100px 0; background: #FAF3EC; text-align: center; }
-        .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding-bottom: 100px; }
-        .service-card-luxury { 
-            background: #fff; border: 1px solid rgba(212,175,106,0.15); padding: 50px 40px; 
-            transition: all 0.5s ease; position: relative; overflow: hidden;
-        }
-        .service-card-luxury:hover { transform: translateY(-10px); border-color: var(--clr-secondary); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-        .service-icon-wrap { margin-bottom: 30px; color: var(--clr-secondary); }
-        .service-card-luxury h3 { font-family: 'Cinzel'; font-size: 20px; margin-bottom: 20px; color: var(--clr-primary); }
-        .service-card-luxury p { font-size: 15px; line-height: 1.8; color: #666; }
-        
-        .catering-highlight { background: var(--clr-primary); color: var(--clr-ivory); padding: 120px 0; }
-    </style>
 </head>
 <body>
 
@@ -31,40 +17,47 @@
     <nav class="navbar scrolled">
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html"><img src="assets/amor-eventz-logo.png" alt="Amor Eventz" style="height: 50px; width: auto;"></a>
+                <a href="index.html"><img src="assets/logo.png" alt="Amor Eventz" style="height: 75px; width: auto;"></a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="venues.html">VENUES</a></li>
-                <li><a href="services.html" class="active">SERVICES</a></li>
-                <li><a href="pricing.html">PRICING</a></li>
-                <li><a href="gallery.html">GALLERY</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="index.html" data-i18n="nav-home">HOME</a></li>
+                <li><a href="about.html" data-i18n="nav-about">ABOUT</a></li>
+                <li><a href="venues.html" data-i18n="nav-venues">VENUES</a></li>
+                <li><a href="services.html" class="active" data-i18n="nav-services">SERVICES</a></li>
+                <li><a href="pricing.html" data-i18n="nav-pricing">PRICING</a></li>
+                <li><a href="gallery.html" data-i18n="nav-gallery">GALLERY</a></li>
+                <li><a href="contact.html" data-i18n="nav-contact">CONTACT</a></li>
             </ul>
-            <a href="contact.html" class="btn btn-primary" style="font-family:'Cinzel',serif;font-size:11px;">RESERVE NOW</a>
+            <div class="nav-actions">
+                <div class="lang-switcher">
+                    <span class="lang-btn active" data-lang="en">EN</span>
+                    <span class="lang-divider"></span>
+                    <span class="lang-btn" data-lang="hi">HI</span>
+                </div>
+                <a href="contact.html" class="nav-btn" data-i18n="nav-reserve">RESERVE NOW</a>
+            </div>
         </div>
     </nav>
 
     <!-- HEADER -->
-    <header class="page-header" style="background-image: linear-gradient(rgba(59, 10, 30, 0.7), rgba(59, 10, 30, 0.7)), url('https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=1600&q=80');">
+    <header class="page-header" style="background-image: linear-gradient(rgba(59, 10, 30, 0.75), rgba(59, 10, 30, 0.75)), url('assets/catering-wedding.jpg');">
         <div class="container text-center reveal">
-            <p style="font-family:'Cinzel'; letter-spacing:4px; font-size:12px; color:var(--clr-secondary);">ART OF HOSTING</p>
-            <h1 style="font-family:'Cormorant Garamond'; font-style:italic; font-size:72px;">Our Services</h1>
+            <p class="txt-ui txt-gold">ART OF HOSTING</p>
+            <h1 class="txt-hero" style="font-size:72px;" data-i18n="nav-services">Our Services</h1>
             <div class="divider-center" style="margin: 30px auto; width: 80px;"></div>
         </div>
     </header>
 
     <!-- INTRO -->
-    <section class="service-intro reveal">
+    <section class="service-intro section-light reveal">
         <div class="container">
-            <h2 style="font-family:'Cormorant Garamond'; font-style:italic; font-size:48px; color:var(--clr-primary); margin-bottom:20px;">Bespoke Curation for Every Milestone</h2>
-            <p style="max-width:700px; margin:0 auto; font-size:18px; color:#555;">From the initial concept to the final toast, our team of experts provides end-to-end event management that prioritizes your vision and exceeds expectations.</p>
+            <h2 class="txt-hero" style="font-size:48px; margin-bottom:20px;">Bespoke Curation for Every Milestone</h2>
+            <p class="txt-body" style="max-width:700px; margin:0 auto; font-size:18px;">From the initial concept to the final toast, our team of experts provides end-to-end event management that prioritizes your vision and exceeds expectations.</p>
         </div>
     </section>
 
     <!-- SERVICE GRID -->
-    <section style="background:#FAF3EC; padding-bottom:120px;">
+    <section class="section-light" style="padding-bottom:120px;">
         <div class="container service-grid">
             <div class="service-card-luxury reveal">
                 <div class="service-icon-wrap">
@@ -109,9 +102,9 @@
                     <img src="https://images.unsplash.com/photo-1555244162-803834f70033?w=800&q=80" alt="Gourmet Catering" style="width:100%; height:500px; object-fit:cover; border:1px solid rgba(212,175,106,0.5);">
                 </div>
                 <div>
-                    <p style="font-family:'Cinzel'; letter-spacing:3px; color:var(--clr-secondary); font-size:12px; margin-bottom:20px;">CULINARY EXCELLENCE</p>
-                    <h2 style="font-family:'Cormorant Garamond'; font-style:italic; font-size:56px; margin-bottom:40px;">A Symphony of Flavours</h2>
-                    <p style="font-family:'Lora'; font-size:18px; line-height:1.9; opacity:0.8; margin-bottom:30px;">Our in-house culinary masters craft artisanal menus that blend regional traditions with global flair. From grand buffet spreads to intimate plated dinners, we ensure your guests talk about the meal for years to come.</p>
+                    <p class="txt-ui txt-gold" style="margin-bottom:20px;">CULINARY EXCELLENCE</p>
+                    <h2 class="txt-hero" style="font-size:56px; margin-bottom:40px;">A Symphony of Flavours</h2>
+                    <p class="txt-body" style="font-size:18px; line-height:1.9; opacity:0.8; margin-bottom:30px;">Our in-house culinary masters craft artisanal menus that blend regional traditions with global flair. From grand buffet spreads to intimate plated dinners, we ensure your guests talk about the meal for years to come.</p>
                     <ul style="list-style:none; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:16px;">
                         <li style="display:flex; align-items:center; gap:12px; font-family:'Cinzel'; font-size:11px; color:var(--clr-secondary);"><span style="width:6px; height:6px; background:var(--clr-secondary); border-radius:50%;"></span> LIVE COUNTERS</li>
                         <li style="display:flex; align-items:center; gap:12px; font-family:'Cinzel'; font-size:11px; color:var(--clr-secondary);"><span style="width:6px; height:6px; background:var(--clr-secondary); border-radius:50%;"></span> GLOBAL CUISINES</li>
@@ -127,20 +120,20 @@
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-brand">
-                <img src="assets/amor-eventz-logo.png" alt="Amor Eventz" style="height: 90px; width: auto; margin-bottom: 20px;">
-                <p>Where Every Celebration Becomes a Legend.</p>
+                <img src="assets/logo.png" alt="Amor Eventz" style="height: 120px; width: auto; margin-bottom: 25px;">
+                <p data-i18n="footer-tagline">Where Every Celebration Becomes a Legend.</p>
             </div>
             <div class="footer-links">
-                <h4>EXPLORE</h4>
+                <h4 data-i18n="footer-explore">EXPLORE</h4>
                 <ul>
-                    <li><a href="about.html">ABOUT US</a></li>
-                    <li><a href="venues.html">OUR VENUES</a></li>
-                    <li><a href="services.html">SERVICES</a></li>
-                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a href="about.html" data-i18n="nav-about">ABOUT US</a></li>
+                    <li><a href="venues.html" data-i18n="nav-venues">OUR VENUES</a></li>
+                    <li><a href="services.html" data-i18n="nav-services">SERVICES</a></li>
+                    <li><a href="gallery.html" data-i18n="nav-gallery">GALLERY</a></li>
                 </ul>
             </div>
             <div class="footer-social">
-                <h4>CONNECT</h4>
+                <h4 data-i18n="footer-connect">CONNECT</h4>
                 <div class="social-icons">
                     <a href="https://instagram.com/amoreventz" target="_blank" class="social-icon">IN</a>
                     <a href="https://facebook.com/amoreventz" target="_blank" class="social-icon">FB</a>
@@ -149,16 +142,16 @@
                 </div>
             </div>
             <div class="footer-newsletter">
-                <h4>NEWSLETTER</h4>
-                <p style="font-size:13px; color:#FAF3EC; opacity:0.7; margin-bottom:12px;">Subscribe for event inspiration & exclusive offers</p>
+                <h4 data-i18n="footer-newsletter">NEWSLETTER</h4>
+                <p style="font-size:13px; color:#FAF3EC; opacity:0.7; margin-bottom:12px;" data-i18n="footer-newsletter-p">Subscribe for event inspiration & exclusive offers</p>
                 <form class="newsletter-form">
                     <input type="email" placeholder="Your email address">
-                    <button type="submit">JOIN</button>
+                    <button type="submit" data-i18n="footer-join">JOIN</button>
                 </form>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 AMOR EVENTZ. ALL RIGHTS RESERVED.</p>
+            <p data-i18n="footer-rights">&copy; 2024 AMOR EVENTZ. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 
